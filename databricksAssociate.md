@@ -152,14 +152,17 @@ Flatten schema or normalize data into multiple tables.
 #### 43. Triggered incremental ingestion, Lower cost, Higher Latency. Ingest same way as previous one 
 #### 44. Batch ingestion with manual incremental ingestion and Lower cost, Higher Latency
 #### 45. Single source of truth
-#### 46. liquid clustering for tables : liquid clustering for tables : Liquid clustering applies to both streaming tables and materialized views.
-<li>Tables that are often filtered by high cardinality columns.</li>
-<li>Tables that have skew in data distribution.</li>
-<li>Tables that grow quickly and require maintenance and tuning effort.</li>
-<li>Tables that have concurrent write requirements.</li>
-<li>Tables that have access patterns that change over time.</li>
-<li>Tables where a typical partition key could leave the table with too many or too few partitions.v
-#### 47. 
+#### 46. liquid clustering for tables : liquid clustering for tables : Liquid clustering applies to both streaming tables and materialized views. In Databricks Runtime 15.4 LTS and above, you can enable automatic liquid clustering for Unity Catalog managed Delta tables
+
+  <li>Tables that are often filtered by high cardinality columns.</li>
+  <li>Tables that have skew in data distribution.</li>
+  <li>Tables that grow quickly and require maintenance and tuning effort.</li>
+  <li>Tables that have concurrent write requirements.</li>
+  <li>Tables that have access patterns that change over time.</li>
+  <li>Tables where a typical partition key could leave the table with too many or too few partitions.</li>
+  <li>Force reclustering for all records : OPTIMIZE table_name FULL;</li>
+  <li>Change clustering keys : ALTER TABLE table_name CLUSTER BY (new_column1, new_column2);</li>
+#### 47. Which scenario is best suited for using spot instances in Databricks?
 #### 48. 
 #### 49. 
 #### .
