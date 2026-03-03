@@ -38,7 +38,34 @@ Which scenario is best suited for using spot instances in Databricks? Spot insta
 
 Partitioning works best when filters are stable and predictable, often on date/time columns. Z-ordering optimizes clustering for known high-cardinality columns with consistent filtering. When query filters are varied and unpredictable, Automatic Liquid Clustering provides the agility to improve performance without manual tuning.
 **Question 7:** Cloudflare R2 removes egress costs, which helps significantly lower expenses when sharing data across cloud environments.
-**Question 8:**
-**Question 9:**
+**Question 8:** In Delta Live Tables (DLT)*, views declared using the @dlt.view decorator are temporary objects. They only exist during a single pipeline run and are not saved to the catalog like tables. Because of this, views are useful for handling intermediate steps in data processing or performing quality checks when the results don’t need to be kept permanently.
+In SQL, it’s is created using the following syntax:
+CREATE TEMPORARY VIEW recent_orders
+AS SELECT * FROM orders WHERE year > 2025;
+* Please note that Delta Live Tables (DLT) has been recently renammed to Lakeflow Declarative Pipeline, however, the current exam version may still refer to it as Delta Live Tables.
+**Question 9:** With ON VIOLATION FAIL UPDATE, records that violate the expectation will cause the pipeline to fail. When a pipeline fails because of an expectation violation, you must fix the pipeline code to handle the invalid data correctly before re-running the pipeline.
+* Please note that Delta Live Tables (DLT) has been recently renammed to Lakeflow Declarative Pipeline, however, the current exam version may still refer to it as Delta Live Tables.
+
+**Question 2:** Overall explanation
+The resources section is where users define deployable objects, such as jobs, pipelines, notebooks, clusters, and more. These resources form the core of what is deployed when a bundle is applied to a target environment.
+
+
+
+Options B, C, and D are incorrect:
+
+settings is not a valid section in the context of a Databricks Asset Bundle.
+
+pipelines allows you to create Lakeflow Declarative Pipelines (Delta Live Tables or DLT) pipelines
+
+workflows are not used in the databricks.yml structure.
+https://docs.databricks.com/aws/en/dev-tools/bundles/settings
+
+
+**Question 2:**  spark.table() function returns the specified Spark SQL table as a PySpark DataFrame
+**Question 2:**
+**Question 2:**
+v
+**Question 2:**
+**Question 2:**
 **Question 2:**
   
