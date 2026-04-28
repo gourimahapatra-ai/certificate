@@ -1,0 +1,534 @@
+# Artificial Intelligence: Sample Questions and Answers 
+
+Costa Rica
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+Last updated: 2025-07-16
+
+----------
+
+> Describe Artificial Intelligence workloads and considerations
+
+> [!NOTE]
+> The questions and answers provided in this study guide are for practice purposes only and are not official practice questions. They are intended to help you prepare for the [AI-900 Microsoft certification exam](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900). For additional preparation materials and the most up-to-date information, please refer to the [official Microsoft documentation](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification).
+
+<details>
+<summary><b>List of References </b> (Click to expand)</summary>
+
+- [Microsoft Certified: Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/) - Overview of the AI-900 certification, including skills measured and exam details.
+- [Study Guide for Exam AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900) - Detailed study guide with topics covered in the exam and links to additional resources.
+- [Course AI-900T00-A: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/training/courses/ai-900t00) - Training course that introduces fundamental AI concepts and Azure services used to create AI solutions.
+  
+</details>
+
+<details>
+<summary><b>List of questions/answers </b> (Click to expand)</summary>
+
+- [Q1: Matching AI Workloads with Scenarios](#q1-matching-ai-workloads-with-scenarios)
+- [Q2: Ensuring Fairness in AI Systems](#q2-ensuring-fairness-in-ai-systems)
+- [Q3: Matching Microsoft AI Principles with Descriptions](#q3-matching-microsoft-ai-principles-with-descriptions)
+- [Q4: Identifying Microsoft AI Principles in Scenarios](#q4-identifying-microsoft-ai-principles-in-scenarios)
+- [Q5: Microsoft Guiding Principles for Responsible AI](#q5-microsoft-guiding-principles-for-responsible-ai)
+- [Q6: Microsoft Guiding Principles for Responsible AI](#q6-microsoft-guiding-principles-for-responsible-ai)
+- [Q7: Identifying AI Techniques for Entity Extraction](#q7-identifying-ai-techniques-for-entity-extraction)
+- [Q8: Matching AI Workloads with Descriptions](#q8-matching-ai-workloads-with-descriptions)
+- [Q9: Ensuring Transparency in AI Systems](#q9-ensuring-transparency-in-ai-systems)
+- [Q10: Ensuring Consistent Operation in AI Systems](#q10-ensuring-consistent-operation-in-ai-systems)
+- [Q11: Matching Microsoft AI Principles with Descriptions](#q11-matching-microsoft-ai-principles-with-descriptions)
+- [Q12: Identifying Microsoft AI Principles](#q12-identifying-microsoft-ai-principles)
+- [Q13: Matching AI Workloads with Descriptions](#q13-matching-ai-workloads-with-descriptions)
+- [Q14: Identifying the business benefit](#q14-identifying-the-business-benefit)
+- [Q15: Identifying AI Workloads](#q15-identifying-ai-workloads)
+- [Q16: Ensuring Inclusiveness in AI Systems](#q16-ensuring-inclusiveness-in-ai-systems)
+- [Q17: Matching AI Workloads with Scenarios](#q17-matching-ai-workloads-with-scenarios)
+- [Q18: Ensuring Accountability in AI Systems](#q18-ensuring-accountability-in-ai-systems)
+- [Q19: Identifying AI Techniques for Image Analysis](#q19-identifying-ai-techniques-for-image-analysis)
+- [Q20: Ensuring Responsible AI Practices](#q20-ensuring-responsible-ai-practices)
+
+</details>
+
+> [!TIP]
+> **Microsoft's Six Principles of Responsible AI:**
+
+| Principle | Description | Key Implementation |
+|-----------|-------------|-------------------|
+| **Fairness** | AI systems should treat all people equally | Diverse training data, bias testing, regular audits |
+| **Reliability & Safety** | AI systems should perform reliably and safely | Robust testing, error handling, fail-safe mechanisms |
+| **Privacy & Security** | AI systems should be secure and respect privacy | Data encryption, access controls, compliance |
+| **Inclusiveness** | AI systems should empower everyone | Accessibility features, universal design |
+| **Transparency** | AI systems should be understandable | Clear documentation, explainable decisions |
+| **Accountability** | People should be accountable for AI systems | Human oversight, governance frameworks |
+
+> [!TIP]
+> **AI Workload Types and Use Cases:**
+
+| Workload Type | Description | Common Scenarios |
+|---------------|-------------|------------------|
+| **Machine Learning** | Systems that learn from data | Predictive analytics, classification, regression |
+| **Computer Vision** | Analyzing visual content | Object detection, facial recognition, OCR |
+| **Natural Language Processing** | Understanding human language | Sentiment analysis, translation, chatbots |
+| **Knowledge Mining** | Extracting insights from data | Document analysis, search enhancement |
+| **Anomaly Detection** | Identifying unusual patterns | Fraud detection, system monitoring |
+| **Conversational AI** | Interactive dialogue systems | Virtual assistants, customer service bots |
+
+> [!TIP]
+> **Azure AI Services Categories:**
+
+| Category | Services | Primary Use Cases |
+|----------|----------|-------------------|
+| **Vision** | Computer Vision, Custom Vision, Face | Image analysis, object detection, facial recognition |
+| **Speech** | Speech-to-Text, Text-to-Speech, Translation | Voice interfaces, transcription, real-time translation |
+| **Language** | Text Analytics, Translator, LUIS, QnA Maker | Text analysis, language understanding, chatbots |
+| **Decision** | Anomaly Detector, Content Moderator, Personalizer | Pattern detection, content filtering, recommendations |
+| **OpenAI** | GPT models, DALL-E, Codex | Generative AI, text generation, code completion |
+
+> [!TIP]
+> **Machine Learning Workflow:**
+
+| Phase | Description | Key Activities |
+|-------|-------------|----------------|
+| **1. Data Preparation** | Collecting and cleaning data | Data collection, cleaning, feature engineering |
+| **2. Model Training** | Building the ML model | Algorithm selection, training, hyperparameter tuning |
+| **3. Model Evaluation** | Testing model performance | Validation, testing, performance metrics |
+| **4. Model Deployment** | Making model available | Publishing, scaling, monitoring |
+| **5. Model Monitoring** | Tracking model performance | Performance tracking, retraining, updates |
+
+> [!TIP]
+> **Types of Machine Learning:**
+
+| Type | Description | Examples |
+|------|-------------|----------|
+| **Supervised Learning** | Learning with labeled data | Classification, regression, spam detection |
+| **Unsupervised Learning** | Finding patterns in unlabeled data | Clustering, dimensionality reduction |
+| **Reinforcement Learning** | Learning through trial and error | Game playing, robotics, autonomous systems |
+| **Semi-supervised Learning** | Combining labeled and unlabeled data | When labeled data is limited |
+
+> [!TIP]
+> **Computer Vision Capabilities:**
+
+| Capability | Description | Azure Service |
+|------------|-------------|---------------|
+| **Image Classification** | Categorizing entire images | Custom Vision, Computer Vision |
+| **Object Detection** | Finding and locating objects | Custom Vision, Computer Vision |
+| **Optical Character Recognition (OCR)** | Extracting text from images | Computer Vision, Form Recognizer |
+| **Facial Recognition** | Identifying and verifying faces | Face API |
+| **Image Analysis** | Understanding image content | Computer Vision |
+
+> [!TIP]
+> **Natural Language Processing Tasks:**
+
+| Task | Description | Azure Service |
+|------|-------------|---------------|
+| **Sentiment Analysis** | Determining emotional tone | Text Analytics |
+| **Key Phrase Extraction** | Identifying important phrases | Text Analytics |
+| **Language Detection** | Identifying the language | Text Analytics |
+| **Named Entity Recognition** | Extracting entities (names, dates, etc.) | Text Analytics |
+| **Translation** | Converting between languages | Translator |
+| **Intent Recognition** | Understanding user intentions | LUIS |
+
+> [!TIP]
+> **Business Benefits of AI Implementation:**
+
+| Benefit | Description | Example |
+|---------|-------------|---------|
+| **Cost Reduction** | Automating manual processes | Chatbots reducing support costs |
+| **Improved Efficiency** | Faster and more accurate processing | Automated document processing |
+| **Enhanced Customer Experience** | Personalized and responsive service | Recommendation engines |
+| **Better Decision Making** | Data-driven insights | Predictive analytics |
+| **24/7 Availability** | Round-the-clock service | Virtual assistants |
+| **Scalability** | Handling increased workload | Auto-scaling AI services |
+
+> [!TIP]
+> **AI Ethics and Bias Considerations:**
+
+| Consideration | Description | Mitigation Strategy |
+|---------------|-------------|-------------------|
+| **Data Bias** | Training data reflects existing prejudices | Diverse and representative datasets |
+| **Algorithmic Bias** | Models perpetuate unfair treatment | Regular bias testing and auditing |
+| **Confirmation Bias** | Seeking information that confirms beliefs | Diverse development teams |
+| **Selection Bias** | Non-representative sample data | Careful data collection methods |
+| **Historical Bias** | Past data reflects past inequalities | Awareness and adjustment for historical context |
+
+> [!TIP]
+> **Azure Machine Learning Studio Components:**
+
+| Component | Purpose | Use Case |
+|-----------|---------|----------|
+| **Designer** | Visual ML workflow creation | Drag-and-drop model building |
+| **Automated ML** | Automated model selection and training | Quick model development |
+| **Notebooks** | Interactive development environment | Data exploration and experimentation |
+| **Experiments** | Tracking ML runs and results | Model versioning and comparison |
+| **Models** | Model registration and management | Model lifecycle management |
+| **Endpoints** | Model deployment and serving | Production model hosting |
+
+> [!TIP]
+> **Common AI Performance Metrics:**
+
+| Metric Type | Metrics | Use Case |
+|-------------|---------|----------|
+| **Classification** | Accuracy, Precision, Recall, F1-Score | Email spam detection |
+| **Regression** | MAE, MSE, RMSE, R-squared | Price prediction |
+| **Clustering** | Silhouette score, Inertia | Customer segmentation |
+| **Computer Vision** | mAP, IoU, Precision, Recall | Object detection |
+| **NLP** | BLEU, ROUGE, Perplexity | Translation quality |
+
+> [!TIP]
+> **Data Privacy and Compliance:**
+
+| Regulation | Description | Key Requirements |
+|------------|-------------|------------------|
+| **GDPR** | EU data protection regulation | Consent, right to deletion, data portability |
+| **CCPA** | California consumer privacy act | Transparency, opt-out rights, data deletion |
+| **HIPAA** | Healthcare data protection | Data encryption, access controls, audit trails |
+| **SOX** | Financial data governance | Data integrity, retention policies |
+
+> [!TIP]
+> **AI Development Best Practices:**
+
+| Practice | Description | Implementation |
+|----------|-------------|----------------|
+| **Start Small** | Begin with pilot projects | Proof of concept before full deployment |
+| **Data Quality First** | Ensure high-quality training data | Data validation and cleaning processes |
+| **Continuous Monitoring** | Track model performance over time | Automated monitoring and alerting |
+| **Version Control** | Track model and data versions | MLOps practices and tools |
+| **Documentation** | Document decisions and processes | Clear project documentation |
+| **Testing** | Comprehensive testing strategies | Unit tests, integration tests, performance tests |
+
+> [!TIP]
+> **Cognitive Load and User Experience:**
+
+| Principle | Description | Application |
+|-----------|-------------|-------------|
+| **Simplicity** | Keep interfaces simple and intuitive | Clear UI design, minimal steps |
+| **Feedback** | Provide clear system feedback | Progress indicators, confirmation messages |
+| **Error Handling** | Graceful error management | Helpful error messages, recovery options |
+| **Consistency** | Maintain consistent behavior | Standardized interactions across features |
+| **Accessibility** | Design for all users | Screen reader support, keyboard navigation |
+
+> [!TIP]
+> **AI Project Lifecycle Phases:** It depends on how complex the use case is, but let's consider a complex scenario, it might take:
+
+| Phase | Duration | Key Deliverables |
+|-------|----------|------------------|
+| **Business Understanding** | 2-4 weeks | Problem definition, success criteria |
+| **Data Understanding** | 3-6 weeks | Data exploration, quality assessment |
+| **Data Preparation** | 4-8 weeks | Clean datasets, feature engineering |
+| **Modeling** | 2-6 weeks | Trained models, performance evaluation |
+| **Evaluation** | 1-2 weeks | Model validation, business impact assessment |
+| **Deployment** | 2-4 weeks | Production deployment, monitoring setup |
+
+> [!TIP]
+> **Common AI Implementation Challenges:**
+
+| Challenge | Description | Solution |
+|-----------|-------------|----------|
+| **Data Quality** | Incomplete or biased data | Data governance and quality processes |
+| **Skills Gap** | Lack of AI expertise | Training programs and external partnerships |
+| **Integration** | Connecting AI with existing systems | API-first architecture, microservices |
+| **Scalability** | Handling increased demand | Cloud-native solutions, auto-scaling |
+| **Governance** | Managing AI risks and compliance | Clear policies and oversight committees |
+| **Change Management** | User adoption and workflow changes | Training and gradual rollout |
+
+## Q1: Matching AI Workloads with Scenarios
+
+> Match the types of AI workloads to the appropriate scenarios.
+
+**Workload Types:**
+1. Anomaly detection
+2. Computer vision
+3. Knowledge mining
+4. Natural language processing
+
+**Scenarios:**
+1. Identifying fraudulent transactions in a banking system.
+2. Recognizing handwritten text in scanned documents.
+3. Extracting key information from a large collection of research papers.
+
+**Answers:**
+- [`Anomaly detection`] 1. Identifying fraudulent transactions in a banking system. `This is the correct answer because anomaly detection involves identifying unusual patterns that may indicate fraud.`
+- [`Computer vision`] 2. Recognizing handwritten text in scanned documents. `This is the correct answer because computer vision involves interpreting visual data, such as recognizing text in images.`
+- [`Knowledge mining`] 3. Extracting key information from a large collection of research papers. `This is the correct answer because knowledge mining involves sifting through large datasets to find valuable insights.`
+
+## Q2: Ensuring Fairness in AI Systems
+
+> AI systems should ensure that decisions are made without bias and do not reflect prejudices from the data sets used to train the systems.
+
+**Options:**
+- [ ] A. Accountability. `This is incorrect because accountability involves ensuring that humans can override AI decisions and take responsibility for outcomes.`
+- [ ] B. Inclusiveness.  `This is incorrect because inclusiveness focuses on making AI accessible to all, including people with disabilities.`
+- [ ] D. Transparency. `This is incorrect because transparency involves making the AI system's decision-making process clear and understandable to users.`
+- [x] D. Fairness. `This is the correct answer because fairness involves ensuring that AI systems treat all people equally and do not reflect biases from the training data.`
+
+## Q3: Matching Microsoft AI Principles with Descriptions
+
+> Match each Microsoft AI principle with its corresponding description.
+
+**Principles:**
+1. Fairness
+2. Privacy and Security
+3. Reliability and Safety
+4. Transparency
+
+**Descriptions:**
+- [ ] A. The system should ensure that personal data is protected and only accessible to authorized users.
+- [ ] B. The system should operate as intended and be resilient to unexpected conditions.
+- [ ] C. The system should provide clear explanations for its decisions to users.
+- [ ] D. The system should treat all users equally, without bias.
+
+**Answers:**
+- [`Fairness`] D. The system should treat all users equally, without bias. `This is the correct answer because fairness involves ensuring that AI systems do not discriminate against any group.`
+- [`Privacy and Security`] A. The system should ensure that personal data is protected and only accessible to authorized users. `This is the correct answer because privacy and security involve safeguarding user information.`
+- [`Reliability and Safety`] B. The system should operate as intended and be resilient to unexpected conditions. `This is the correct answer because reliability and safety ensure that AI systems are dependable and secure.`
+- [`Transparency`] C. The system should provide clear explanations for its decisions to users. `This is the correct answer because transparency involves making AI systems and their decisions clear to users.`
+
+
+## Q4: Identifying Microsoft AI Principles in Scenarios
+
+> Determine whether each of the following scenarios is an example of the Microsoft transparency principle for responsible AI.
+
+**Statements:**
+
+1. Providing users with detailed information on how their data is being used by an AI system.
+   - [x] Yes `This is correct because transparency involves making the AI system's data usage clear and understandable to users.`
+   - [ ] No `This is incorrect because providing detailed information on data usage aligns with the transparency principle.`
+2. Ensuring that an AI system can be overridden by human operators in critical situations.
+   - [ ] Yes `This is incorrect because this scenario aligns with the accountability principle, not transparency.`
+   - [x] No `This is correct because ensuring human override capability is related to accountability, not transparency.`
+3. Designing an AI system to be accessible to users with disabilities.
+   - [ ] Yes `This is incorrect because this scenario aligns with the inclusiveness principle, not transparency.`
+   - [x] No `This is correct because making AI accessible to users with disabilities is related to inclusiveness, not transparency.`
+
+## Q5: Microsoft Guiding Principles for Responsible AI
+
+> When you design an AI system to recommend job candidates, the criteria used to make the recommendations should be clear and understandable. This is an example of which Microsoft guiding principle for responsible AI?
+
+**Options:**
+- [ ] A. Inclusiveness `This is incorrect because inclusiveness focuses on making AI accessible to all, including people with disabilities.`
+- [ ] B. Fairness `This is incorrect because fairness involves ensuring that AI systems treat all people equally and avoid biases.`
+- [ ] C. Privacy and Security `This is incorrect because privacy and security involve protecting user data and ensuring it is kept confidential.`
+- [x] D. Transparency `This is the correct answer because transparency involves making the AI system's decision-making process clear and understandable to users.`
+
+
+## Q6: Microsoft Guiding Principles for Responsible AI
+
+> What are three Microsoft guiding principles for responsible AI? Each correct answer presents a complete solution.
+
+**Options:**
+
+- [ ] A. Innovation `This is incorrect because innovation, while important, is not one of Microsoft's guiding principles for responsible AI.`
+- [ ] B. Efficiency `This is incorrect because efficiency is not one of Microsoft's guiding principles for responsible AI.`
+- [ ] C. Profitability `This is incorrect because profitability is not one of Microsoft's guiding principles for responsible AI.`
+- [X] D. Inclusiveness `This is the correct answer because inclusiveness focuses on making AI accessible to everyone, including people with disabilities.`
+- [X] E. Fairness `This is the correct answer because fairness involves ensuring that AI systems treat all people equally and avoid biases.`
+- [X] F. Transparency `This is the correct answer because transparency involves making AI systems understandable and their decisions explainable.`
+
+
+## Q7: Identifying AI Techniques for Entity Extraction
+
+> Which AI technique is used to identify and classify specific entities such as names, dates, and locations within text?
+
+**Options:**
+- [ ] A. Key phrase extraction `This is incorrect because key phrase extraction identifies important phrases in text, not specific entities like names, dates, and locations.`
+- [ ] B. Language detection `This is incorrect because language detection identifies the language of the text, not specific entities.`
+- [ ] C. Sentiment Analysis `This is incorrect because sentiment analysis determines the sentiment or emotion expressed in the text.`
+- [X] D. Named Entity Recognition (NER) `This is the correct answer because Named Entity Recognition (NER) is used to identify and classify specific entities such as names, dates, and locations within text.`
+
+
+## Q8: Matching AI Workloads with Descriptions
+
+> Match each AI workload type with its corresponding description.
+
+**Workload Types:**
+1. Anomaly detection
+2. Computer vision
+3. Machine Learning (Classification)
+4. Natural language processing
+
+**Descriptions:**
+- [ ] A. Detecting spam emails based on their content.
+- [ ] B. Recognizing faces in a photo.
+- [ ] C. Identifying unusual patterns in network traffic to detect cyber attacks.
+- [ ] D. Classifying emails as spam or not spam.
+
+**Answers:**
+- [`Anomaly detection`] C. Identifying unusual patterns in network traffic to detect cyber attacks. `This is the correct answer because anomaly detection involves finding deviations from normal patterns, such as in cybersecurity.`
+- [`Computer vision`] B. Recognizing faces in a photo. `This is the correct answer because computer vision is about interpreting visual data from the world.`
+- [`Machine Learning (Classification)`] D. Classifying emails as spam or not spam. `This is the correct answer because classification involves categorizing data into predefined classes.`
+- [`Natural language processing`] A. Detecting spam emails based on their content. `This is the correct answer because natural language processing involves understanding and interpreting human language.`
+
+## Q9: Ensuring Transparency in AI Systems
+
+> You are building an AI system. Which task should you include to ensure that the service meets the Microsoft transparency principle for responsible AI?
+
+**Options:**
+- [ ] A. Ensure that the AI system's decision-making process is documented and accessible to users. `This is the correct answer because transparency involves making the AI system's workings understandable to users.`
+- [ ] B. Enable autoscaling to ensure that a service scales based on demand. `This is incorrect because autoscaling is related to performance and scalability, not transparency.`
+- [ ] C. Ensure that the AI system is tested for biases and fairness. `This is incorrect because testing for biases and fairness relates to the fairness principle, not transparency.`
+- [ ] D. Provide training for users on how to interact with the AI system. `This is incorrect because providing user training is related to usability, not transparency.`
+
+**Answers:**
+- [`Transparency`] A. Ensure that the AI system's decision-making process is documented and accessible to users. `This is the correct answer because transparency involves making the AI system's workings understandable to users.`
+- [`Performance and Scalability`] B. Enable autoscaling to ensure that a service scales based on demand. `This is incorrect because autoscaling is related to performance and scalability, not transparency.`
+- [`Fairness`] C. Ensure that the AI system is tested for biases and fairness. `This is incorrect because testing for biases and fairness relates to the fairness principle, not transparency.`
+- [`Usability`] D. Provide training for users on how to interact with the AI system. `This is incorrect because providing user training is related to usability, not transparency.`
+
+
+## Q10: Ensuring Consistent Operation in AI Systems
+
+> When developing an AI system for medical diagnosis, the Microsoft __________ principle for responsible AI should be applied to ensure the system operates reliably and safely under various conditions.
+
+**Options:**
+- [ ] A. Inclusiveness `This is incorrect because inclusiveness focuses on making AI accessible to all, including people with disabilities.`
+- [ ] B. Accountability `This is incorrect because accountability involves ensuring that humans can override AI decisions and take responsibility for outcomes.`
+- [ ] C. Fairness `This is incorrect because fairness focuses on treating all people equally and avoiding biases.`
+- [x] D. Reliability and Safety `This is the correct answer because reliability and safety ensure that AI systems operate as intended and can handle unexpected conditions without causing harm.`
+
+
+## Q11: Matching Microsoft AI Principles with Descriptions
+
+> Match each Microsoft AI principle with its corresponding description.
+
+**Principles:**
+1. Fairness
+2. Inclusiveness
+3. Privacy and Security
+4. Reliability and Safety
+5. Transparency
+
+**Descriptions:**
+- [ ] A. Ensuring that AI systems are understandable and their decisions can be explained.
+- [ ] B. Making sure AI systems treat all people equally and avoid biases.
+- [ ] C. Providing users with control over their data and ensuring it is protected.
+- [ ] D. Designing AI systems to work as intended and resist harmful manipulation.
+- [x] E. Empowering everyone, including people with disabilities, to use AI systems.
+
+**Answers:**
+- [`Fairness`] B. Making sure AI systems treat all people equally and avoid biases. `This is the correct answer because fairness involves ensuring that AI systems do not discriminate against any group.`
+- [`Inclusiveness`] E. Empowering everyone, including people with disabilities, to use AI systems. `This is the correct answer because inclusiveness focuses on making AI accessible to all.`
+- [`Privacy and Security`] C. Providing users with control over their data and ensuring it is protected. `This is the correct answer because privacy and security involve safeguarding user information.`
+- [`Reliability and Safety`] D. Designing AI systems to work as intended and resist harmful manipulation. `This is the correct answer because reliability and safety ensure that AI systems are dependable and secure.`
+- [`Transparency`] A. Ensuring that AI systems are understandable and their decisions can be explained. `This is the correct answer because transparency involves making AI systems and their decisions clear to users.`
+
+## Q12: Identifying Microsoft AI Principles
+
+> You are designing an AI system that ensures data privacy and protects user information. This is an example of which Microsoft guiding principle for responsible AI?
+
+**Options:**
+- [ ] A. Fairness `This is incorrect because fairness focuses on treating all people equally and avoiding biases.`
+- [ ] B. Inclusiveness `This is incorrect because inclusiveness is about empowering everyone, including people with disabilities.`
+- [ ] C. Reliability and Safety `This is incorrect because reliability and safety focus on ensuring that AI systems work as intended and minimize risks.`
+- [x] D. Privacy and Security `This is the correct answer because privacy and security involve protecting user data and ensuring that information is kept confidential.`
+
+## Q13: Matching AI Workloads with Descriptions
+
+> Match each AI workload type with its corresponding description.
+
+**Workload Types:**
+1. Anomaly detection
+2. Computer vision
+3. Conversational AI
+4. Knowledge mining
+5. Natural language processing
+
+**Descriptions:**
+- [ ] A. Analyzing text to determine the sentiment of customer reviews.
+- [ ] B. Identifying unusual patterns in financial transactions to detect fraud.
+- [ ] C. Extracting useful information from large datasets to answer specific questions.
+- [ ] D. Recognizing objects and people in images.
+- [ ] E. Providing automated responses to customer inquiries through a chat interface.
+
+**Answers:**
+- [`Anomaly detection`] B. Identifying unusual patterns in financial transactions to detect fraud. `This is the correct answer because anomaly detection involves finding deviations from normal patterns, such as in fraud detection.`
+- [`Computer vision`] D. Recognizing objects and people in images. `This is the correct answer because computer vision is about interpreting visual data from the world.`
+ - [`Conversational AI`] E. Providing automated responses to customer inquiries through a chat interface. `This is the correct answer because conversational AI involves creating chatbots and virtual assistants.`
+ - [`Knowledge mining`] C. Extracting useful information from large datasets to answer specific questions. `This is the correct answer because knowledge mining involves sifting through data to find valuable insights.`
+ - [`Natural language processing`] A. Analyzing text to determine the sentiment of customer reviews. `This is the correct answer because natural language processing involves understanding and interpreting human language.`
+
+## Q14: Identifying the business benefit
+
+> A company hires customer service agents to handle phone and email support. They create a webchat bot to answer common questions automatically. What benefits should they expect from this webchat bot?
+
+**Options:**
+- [ ] A. Increased customer complaints: `This is unlikely because a well-implemented webchat bot should improve customer service by providing quick responses to common queries.`
+- [ ] B. Increased workload for the customer service agents. `This is incorrect because the purpose of the webchat bot is to reduce the workload by handling routine queries.`
+- [ ] C. Decreased efficiency in handling customer queries. `This is incorrect because the webchat bot is designed to increase efficiency by providing instant responses to common queries.`
+- [X] D. A reduced workload for the customer service agents `This is the correct answer. The webchat bot automates responses to common questions, allowing human agents to focus on more complex issues, thus reducing their overall workload.`
+
+## Q15: Identifying AI Workloads
+
+> Which AI workload involves analyzing text to determine the sentiment expressed in customer reviews?
+
+**Options:**
+- [ ] A. Computer vision `Incorrect because computer vision involves analyzing images, not text.`
+- [ ] B. Knowledge mining `Incorrect because knowledge mining involves extracting useful information from large datasets.`
+- [x] C. Natural language processing `Correct because natural language processing involves analyzing text to determine sentiment and other linguistic features.`
+- [ ] D. Anomaly detection `Incorrect because anomaly detection involves identifying unusual patterns in data.`
+
+## Q16: Ensuring Inclusiveness in AI Systems
+
+> AI systems should be designed to be accessible to all users, including those with disabilities. This is an example of which Microsoft guiding principle for responsible AI?
+
+**Options:**
+- [ ] A. Fairness `Incorrect because fairness involves ensuring that AI systems treat all people equally and avoid biases.`
+- [ ] B. Transparency `Incorrect because transparency involves making the AI system's decision-making process clear and understandable to users.`
+- [ ] C. Privacy and Security `Incorrect because privacy and security involve protecting user data and ensuring it is kept confidential.`
+- [x] D. Inclusiveness `Correct because inclusiveness focuses on making AI accessible to everyone, including people with disabilities.`
+
+## Q17: Matching AI Workloads with Scenarios
+
+> Match the types of AI workloads to the appropriate scenarios.
+
+**Workload Types:**
+1. Anomaly detection
+2. Computer vision
+3. Knowledge mining
+4. Natural language processing
+
+**Scenarios:**
+1. Detecting unusual patterns in credit card transactions to identify potential fraud.
+2. Extracting key insights from a large collection of legal documents.
+3. Analyzing customer feedback to determine overall satisfaction.
+
+**Answers:**
+- [`Anomaly detection`] 1. Detecting unusual patterns in credit card transactions to identify potential fraud. `Anomaly detection involves identifying deviations from normal patterns, such as in fraud detection.`
+- [`Knowledge mining`] 2. Extracting key insights from a large collection of legal documents. `Knowledge mining involves sifting through large datasets to find valuable insights.`
+- [`Natural language processing`] 3. Analyzing customer feedback to determine overall satisfaction. `Natural language processing involves understanding and interpreting human language.`
+
+## Q18: Ensuring Accountability in AI Systems
+
+> AI systems should have mechanisms in place to ensure that humans can override AI decisions and take responsibility for outcomes. This is an example of which Microsoft guiding principle for responsible AI?
+
+**Options:**
+- [ ] A. Fairness `Incorrect because fairness involves ensuring that AI systems treat all people equally and avoid biases.`
+- [ ] B. Inclusiveness `Incorrect because inclusiveness focuses on making AI accessible to all, including people with disabilities.`
+- [ ] C. Transparency `Incorrect because transparency involves making the AI system's decision-making process clear and understandable to users.`
+- [x] D. Accountability `Correct because accountability involves ensuring that humans can override AI decisions and take responsibility for outcomes.`
+
+## Q19: Identifying AI Techniques for Image Analysis
+
+> Which AI technique is used to identify and label objects within images, such as cars, trees, and buildings?
+
+**Options:**
+- [ ] A. Text Analytics `Incorrect because text analytics is used for analyzing unstructured text data, not for identifying objects in images.`
+- [ ] B. Language Understanding `Incorrect because language understanding is used for building natural language understanding models, not for identifying objects in images.`
+- [x] C. Computer Vision `Correct because computer vision is used to identify and label objects within images.`
+- [ ] D. Form Recognizer `Incorrect because form recognizer is used for extracting text and data from forms and documents, not for identifying objects in images.`
+
+## Q20: Ensuring Responsible AI Practices
+
+> You are developing an AI-based application. Which two principles should you follow to ensure responsible AI practices? Each correct answer presents part of the solution.
+
+**Options:**
+- [ ] A. Use a waterfall software development methodology. `This is incorrect because the development methodology does not directly relate to responsible AI principles.`
+- [ ] B. Avoid disclosing the use of AI-based algorithms for automated decision making. `This is incorrect because transparency is a key principle of responsible AI, and disclosing the use of AI is important for building trust.`
+- [x] C. Implement a process of AI model validation as part of the software review process. `This is the correct answer because validating AI models ensures they meet ethical and performance standards.`
+- [x] D. Establish a risk governance committee that includes members of the legal team, members of the risk management team, and a privacy officer. `This is the correct answer because having a risk governance committee ensures that AI practices are monitored and comply with legal and ethical standards.`
+
+<!-- START BADGE -->
+<div align="center">
+  <img src="https://img.shields.io/badge/Total%20views-1336-limegreen" alt="Total views">
+  <p>Refresh Date: 2025-08-05</p>
+</div>
+<!-- END BADGE -->

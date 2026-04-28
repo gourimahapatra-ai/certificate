@@ -1,0 +1,213 @@
+Why Gen AI :
+- Not using GenAI is a risk—it can slow productivity and limit innovation.
+- GenAI introduces new ways of working, helping organizations unlock new opportunities.
+- Tools like Gemini enable tasks such as document summarization, translation, content creation, and even video/podcast generation.
+- Coding with AI is a major breakthrough—anyone can now build solutions faster, boosting productivity.
+- Studies show workers can save ~122 hours/year using GenAI tools.
+- Model performance improves with high-quality, multimodal data (text, images, video).
+- Organizations must adopt GenAI to stay competitive and innovate faster.
+- Leadership plays a key role by promoting education and training on GenAI capabilities and limitations.
+
+🧠 Using Generative AI – Quick Summary
+
+Generative AI creates new content like text, images, videos, and code.
+
+🔑 4 Main Uses
+- Create: Generate content (emails, images, videos, code).
+- Summarize: Turn large information into short, useful insights.
+- Discover: Find information, patterns, and insights quickly.
+- Automate: Handle repetitive tasks (documentation, analysis, alerts).
+
+⚡ Multimodal Capability
+- Works across text, images, audio, video, PDFs—even combining them.
+
+🎯 Business Impact
+- Improves productivity, decision-making, creativity, and efficiency
+- Reduces manual effort and operational costs
+
+🧠 Multimodal Generative AI – Summary
+- Multimodal GenAI can process and combine multiple data types (text, images, audio, video), giving a richer understanding of complex workflows.
+- It helps solve real-world business problems where information exists in different formats, not just text.
+
+🚗 Example (Automotive)
+- A virtual assistant uses:
+- Gemini → to understand user queries and interact conversationally
+- Vertex AI Search → to retrieve relevant info from manuals, videos, FAQs
+
+Users can:
+- Ask questions naturally
+- Upload images (e.g., warning light)
+- Get step-by-step troubleshooting guidance
+
+🎯 Benefits
+- Faster problem resolution
+- Reduced customer support costs
+- Improved efficiency and user experience
+- Better accessibility for non-technical users
+
+🧠 How Generative AI Works (Foundation Models)
+- Foundation models are large AI models trained on massive, diverse datasets (text, images, code, etc.).
+- They form the core of generative AI, enabling systems to handle many different tasks.
+
+🔑 Key Concepts
+- AI: Machines performing human-like tasks (e.g., understanding language).
+- ML: Systems learn from data to solve problems.
+- Foundation models: Unlike traditional AI, they are general-purpose, not task-specific.
+- LLMs: A type of foundation model focused on language.
+
+⚙️ Key Features
+- Trained on diverse data → learns broad patterns
+- Flexible → one model, many use cases
+- Adaptable → can be fine-tuned for specific needs
+
+📌 Examples
+- Gemini: Multimodal (text, images, video, code) → supports many tasks
+- Imagen: Focused on image generation from text
+
+🛒 Morrisons GenAI Use Case – Summary
+- Morrisons (UK supermarket) built a product finder tool to help customers locate items in-store بسهولة.
+- Customers can search naturally, and the system shows exact aisle and shelf location.
+
+⚙️ How it works
+- Uses:
+- Gemini → understands user queries
+- Vertex AI → processes and maps queries
+- BigQuery → stores product location data
+- Converts user input into product ID + store location.
+
+🎯 Benefits
+- Reduces customer stress and improves shopping experience
+- Helps users find hard-to-locate items quickly
+- Enables a small team to build faster using pre-trained models
+- Speeds up development and innovation
+
+🧠 Prompting in Generative AI – Summary
+Foundation models use prompts (inputs) to generate outputs (responses).
+They are highly flexible, especially multimodal models, accepting inputs like text, images, code, etc.
+
+🔑 Examples
+- Question → Answer
+- Text → Image
+- Document → Summary
+- Code with errors → Fixed code
+
+⚙️ Key Insight
+- The quality of the prompt directly impacts the output.
+- Designing effective prompts is called prompt engineering.
+
+🤖 Using the Gemini App – Summary
+- Gemini works like a smart assistant where you enter prompts to get AI-generated outputs.
+
+You can use it for:
+- Create → generate content (e.g., poems, website text)
+- Summarize → condense documents
+- Discover → research topics
+
+⚙️ How it works
+- Enter a prompt (input) → Gemini generates a response (output)
+- Learning happens best by experimenting with prompts
+
+🔑 Input Types
+- Text description → images, plans, content
+- Image input → analysis or modifications
+- Code snippet → debugging/fixing
+- Audio/Video → summaries or insights
+
+🤖 AI-First Company (Google) – Summary
+- Google has been a leader in AI innovation, building products like Search, Gmail, and Android using AI advancements.
+
+🚀 Key Idea
+- Google follows an AI-first approach—using AI to drive innovation across products and services.
+
+⚙️ Google GenAI Ecosystem
+- Provides ready-to-use tools so businesses don’t need to build AI from scratch:
+- Gemini → core AI model
+- Google Workspace → AI in Gmail, Docs, Slides
+- Google Cloud / Vertex AI → build and deploy AI apps
+- Search & Gemini App → faster information access
+
+🔄 Continuous Innovation
+- Automatic model updates, new features, and security improvements
+- Keeps organizations up-to-date without heavy effort
+
+🔐 Responsible & Secure AI
+- Built with strong focus on:
+- Security (SAIF, infrastructure)
+- Ethics (AI Principles)
+- Compliance (ISO, SOC, etc.)
+
+🌍 Open & Flexible
+- Supports open-source tools (TensorFlow, PyTorch)
+- Avoids vendor lock-in with flexible integration options
+
+🧠 GenAI Strategy (Top-Down + Bottom-Up) – Summary
+- Organizations should adopt GenAI with a clear strategy, not blindly.
+- 
+🔄 Two-Fold Approach
+- Top-down (Leadership):
+- Define vision and align GenAI with business goals
+- Prioritize high-impact use cases
+- Provide resources and governance
+- Bottom-up (Teams):
+- Encourage employees to experiment and share ideas
+- Identify practical, real-world use cases
+- Drive innovation from day-to-day work
+
+⚙️ Key Success Factors
+- Focus on high-value, feasible use cases
+- Promote experimentation and learning
+- Ensure responsible AI usage
+- Allocate proper resources
+- Measure impact and ROI
+- Continuously improve and iterate
+
+💡 Brainstorming GenAI Use Cases – Summary
+- Use a Creative Matrix to systematically generate ideas.
+
+⚙️ How it works
+- Create two axes:
+- Axis 1 → GenAI capabilities (tools, modalities, products)
+- Axis 2 → Business aspects (workflows, goals, personas)
+- Brainstorm ideas at each intersection (like sticky notes)
+
+🧠 Examples
+- Image search tool for product discovery
+- AI chatbot for customer support
+- Predictive analytics for demand forecasting
+
+🎯 Next Step: Prioritization
+- Evaluate ideas based on:
+- Impact (value)
+- Feasibility (effort, cost)
+
+🧠 Humans + GenAI (Augmentation vs Automation) – Summary
+🔑 Core Idea
+- GenAI should support humans, not replace them
+- Shift from doing tasks → strategic thinking
+  
+⚖️ Augmentation (Enhancing Humans)
+- Use GenAI to assist in:
+- Critical thinking & decision-making
+- Creativity & innovation
+- Collaboration & relationships
+- Strategic planning & vision
+
+👉 Humans remain essential for judgment and direction.
+
+⚙️ Automation (Replacing Tasks)
+- Use GenAI for:
+- Repetitive, rule-based tasks (data entry, basic coding)
+- Time-consuming work (research, summarization, drafts)
+
+👥 Human-in-the-Loop (Always Needed)
+- Data selection & quality control
+- Prompt design
+- Output review & refinement
+- Continuous feedback & improvement
+
+🧪 Examples
+- Chatbot answering FAQs → Automation
+- Analyst using AI insights for decisions → Augmentation
+- AI generating product descriptions → Automation
+- AI-assisted coding with human review → Augmentation
+  
