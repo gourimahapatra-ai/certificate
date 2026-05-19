@@ -44,3 +44,55 @@ https://docs.snowflake.com/en/user-guide/tables-clustering-micropartitions.html
 - Transaction control / ACID compliance
 
 Snowflake's data sharing, cloning, and data exchange features are all managed through the cloud services layer using metadata. The cloud services layer also provides ACID compliance. ACID means a database system must allow several transactions to run in isolation and commit or roll back a transaction as a unit, assuring system consistency.
+
+
+### Snowflake customers can control the format using which Snowflake stores the data for a table.
+
+Snowflake stores data in a proprietary format on cloud object storage, such as AWS S3, Azure Blob Storage, or Google Cloud Storage. Users cannot see the actual files, look at how the data is stored, or access the file directly. Users can not change how Snowflake stores the data behind the scenes.
+
+
+### Which of the following statement is true regarding the Query Processing Layer?
+
+The query processing layer is the compute layer through which queries and data processing jobs are executed on the stored data. The compute layer can have multiple clusters for a given Snowflake instance simultaneously. The compute engines in Snowflake are known as virtual warehouses. The cloud services layer performs the query plans and optimization. 
+
+### The query processing layer is responsible for executing queries.
+### The query processing layer can run multiple compute clusters (virtual warehouses) simultaneously.
+
+
+https://docs.snowflake.com/en/user-guide/intro-key-concepts
+
+### Snowflake database is based on the massively parallel shared nothing architecture used by databases like Teradata and Greenplum and data lakes like Hadoop.
+
+Snowflake implements a new hybrid architecture that combines the best features of shared-disk and shared-nothing architectures. Snowflake stores data similarly to a shared-disk architecture, i.e., the data is shared. But it also allows for using several compute engines, each with its own memory and processing capabilities. https://docs.snowflake.com/en/user-guide/intro-key-concepts#snowflake-architecture
+
+
+### Which of the following is a feature available in the Business Critical Edition but not in the Enterprise Edition?
+
+Customer-Managed Encryption
+
+The Business Critical Edition includes advanced security features such as customer-managed encryption, which is not available in the Enterprise Edition.
+
+
+### What is a key difference between the Snowflake ACCOUNT_USAGE schema and INFORMATION_SCHEMA schema regarding dropped objects?
+
+ACCOUNT_USAGE schema includes information on dropped objects, while INFORMATION_SCHEMA does not.
+
+The ACCOUNT_USAGE schema contains information on dropped objects, with specific columns indicating whether an object is active or has been deleted. In contrast, the INFORMATION_SCHEMA does not track dropped objects.
+
+
+### Which of the following statements about Snowflake Time Travel and Fail-safe is correct?
+Time Travel is available for querying and restoring data using SQL commands like SELECT ... AT/BEFORE and UNDROP, while Fail-safe is a disaster recovery feature accessible only by Snowflake Support and incurs additional storage costs.
+
+Explanation
+This accurately describes both features:
+
+Time Travel: User-accessible feature that allows querying historical data (AT or BEFORE clauses) and recovering dropped objects (UNDROP TABLE/SCHEMA/DATABASE). Retention period is configurable (0-1 days for Standard Edition, 0-90 days for Enterprise Edition and higher).
+
+Fail-safe: A 7-day disaster recovery period that automatically follows the Time Travel period. It is NOT accessible by users through SQL queries - only Snowflake Support can recover data from Fail-safe upon request. Both Time Travel and Fail-safe data incur storage costs.
+
+### In Snowflake, each account is associated with a specific cloud provider and region, and cannot span across multiple regions within the same organization.
+
+True
+
+Explanation
+In Snowflake, each account is tied to a specific cloud provider (like AWS, Azure, or GCP) and a particular region within that provider. A single Snowflake account does not span multiple regions. For organizations requiring access to multiple regions, they need to set up separate accounts for each region.

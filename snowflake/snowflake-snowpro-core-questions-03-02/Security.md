@@ -340,3 +340,128 @@ https://docs.snowflake.com/en/user-guide/ui-snowsight-gs#accessing-sf-web-interf
 
 Snowflake supports masking policies that may be applied to columns and enforced at the column level to provide column-level security. Column-level security is achieved by dynamic data masking or external Tokenization.
  https://docs.snowflake.com/en/user-guide/security-column
+
+
+### Which of the following statements is true regarding the ACCOUNTADMIN role? Select all that apply.
+
+### A user with the ACCOUNTADMIN role can create & manage resource monitors
+### ACCOUNTADMIN role has full access rights and is the most powerful account.
+
+ACCOUNTADMIN is the account administrator role with full access rights. As the most powerful role in the organization, access to this role should be rigorously managed. This role encapsulates the SECURITYADMIN and SYSADMIN roles, therefore, has all the privileges of SYSADMIN and SECURITYADMIN too.
+
+https://docs.snowflake.com/en/user-guide/security-access-control-overview#system-defined-roles.
+
+
+
+# Reader Accounts — Sharing Data with Non‑Snowflake Users
+
+## What a Reader Account Is
+A **reader account** is a special type of Snowflake account that a **data provider creates and manages** for the sole purpose of sharing data with users or organizations **that do not have their own Snowflake account**.
+
+This allows external consumers to query shared data **without becoming Snowflake customers**.
+
+---
+
+## Key Characteristics
+
+- **Created by the data provider**  
+  The provider owns and administers the reader account.
+
+- **Used only for data sharing**  
+  Reader accounts cannot create their own databases or ingest data independently.
+
+- **Consumers access shared data through Snowsight or SQL**  
+  They can run queries but cannot modify the shared objects.
+
+- **Billing is handled by the provider**  
+  The provider pays for compute used by the reader account.
+
+---
+
+## Why Reader Accounts Exist
+Reader accounts enable secure, controlled data sharing with:
+
+- Partners  
+- Vendors  
+- Clients  
+- External teams without Snowflake subscriptions  
+
+They provide a **zero‑friction onboarding path** for data consumers.
+
+---
+
+## Exam‑Ready Takeaway
+> **Reader accounts allow sharing data with non‑Snowflake users.  
+> They are created and fully managed by the data provider for sharing purposes only.**
+
+### Which one of the following is supported by Snowflake for the purpose of auto-provisioning users and group membership?
+
+### SCIM
+
+Snowflake supports SCIM 2.0 and is compatible with Okta and Azure Active Directory. SCIM is an open standard that provides automatic user provisioning and role synchronization based on identity provider information. When a new user is created in the identity provider, the SCIM automatically provisions the user in Snowflake. Additionally, SCIM can sync groups defined in an identity provider with Snowflake roles. https://docs.snowflake.com/en/user-guide/scim
+
+
+### Which of the following statements accurately describes Snowflake's encryption for data at rest? Select all that apply.
+
+Every 30 days, Snowflake rotates the keys used for encryption
+Snowflake manages encryption keys by default
+Snowflake rekeys encrypted data after 1 year
+
+
+### Which role is recommended to assign when creating custom roles to ensure they have full object control within Snowflake?  : SYSADMIN
+
+SYSADMIN is the recommended role to assign when creating custom roles in Snowflake. Assigning custom roles under SYSADMIN ensures they have full control over objects they create and maintain within the account.
+
+### Which of the following statements accurately describes the ownership privilege in Snowflake?
+Ownership allows a role to transfer its ownership of an object to another role.
+
+### What must be granted in addition to the table-level privileges to allow a role to access a table within a database in Snowflake?
+
+The usage privilege on both the schema and the database
+
+To access a table, the role must have the usage privilege not only on the table but also on its parent schema and the database. This is part of the object hierarchy in Snowflake’s access control model.
+
+### In Snowflake, which role is recommended for managing the permissions and enrollment of Multi-Factor Authentication (MFA), ensuring that security configurations adhere to best practices?
+
+SECURITYADMIN
+
+The SECURITYADMIN role is responsible for managing security-related configurations, including the permissions and enrollment of MFA for users. It can enable or disable MFA settings on a user basis.
+
+### In Snowflake, which role is primarily responsible for assigning and managing user access privileges and security policies within an account?
+
+The SECURITYADMIN role is specifically designed to handle security-related tasks within Snowflake. This includes creating and managing users and roles, assigning privileges, and defining security policies. It ensures that appropriate access controls are in place, making it the primary role for managing user access privileges and security within the account.
+
+
+
+### Which of the following identity providers are natively supported by Snowflake for federated authentication (SSO)? (Choose two.)
+
+Microsoft ADFS, Okta
+
+### Which privilege is necessary to enable the Search Optimization Service on a table in Snowflake?
+
+OWNERSHIP on the table or ADD SEARCH OPTIMIZATION on the schema
+
+Explanation
+To enable the Search Optimization Service on a table, a user must either have ownership privileges on the table or the ADD SEARCH OPTIMIZATION privilege on the schema level.
+
+
+### When cloning a schema in Snowflake, the privileges for the schema itself are inherited automatically, while privileges for child objects must be granted separately.
+False
+
+Explanation
+In Snowflake, when cloning a schema, the privileges for the child objects are inherited automatically, but the privileges for the schema itself are not inherited. The administrator must reassign privileges for the schema itself manually.
+
+
+### What is the role required to query the TABLE_STORAGE_METRICS view from the account usage schema in Snowflake?
+ACCOUNTADMIN
+
+Explanation
+To access detailed account usage information, including the TABLE_STORAGE_METRICS view, the ACCOUNTADMIN role is required. This role provides the necessary privileges for viewing comprehensive account-wide data.
+
+### What is the minimum key size required for key-pair authentication in Snowflake?
+2048 bits
+
+Explanation
+Snowflake requires a minimum key size of 2048 bits for key-pair authentication to ensure a high level of security.
+
+

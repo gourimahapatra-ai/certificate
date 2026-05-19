@@ -161,3 +161,16 @@ https://docs.snowflake.com/en/sql-reference/account-usage/copy_history
 The ACCOUNT USAGE schema consists of several views that provide usage metrics and metadata information at the account level. Data provided by the ACCOUNT_USAGE views is NOT real-time and refreshes typically with a lag of 45 minutes to 3 hours, depending on the view. The data in these views are retained for up to 365 days. https://docs.snowflake.com/en/sql-reference/account-usage#differences-between-account-usage-and-information-schema
 
 
+
+### For how long a query remains visible on the query history page in the Snowsight interface?
+
+Ans : 14 days
+
+
+### The usage data provided through the INFORMATION SCHEMA has a retention of how many days? 7 days - 6 months
+
+The data in the INFORMATION_SCHEMA views is retained for a shorter period. Typical data retention in INFORMATION SCHEMA is 14 days but can be seven days for specific views and up to 6 months for usage history views. Thus, these views have retention ranging from 7 days to a maximum of 6 months, depending on the view. So typically, the views in the INFORMATION SCHEMA can be used to find more recent information. https://docs.snowflake.com/en/sql-reference/account-usage#differences-between-account-usage-and-information-schema
+
+
+### Which of the following can create a new resource monitor?
+From a privilege perspective, only Account Administrators (users with ACCOUNTADMIN role) can create new resource monitors. However, account administrators can grant privileges to an existing resource monitor to allow other users to view and modify the resource monitor configuration. The MONITOR and MODIFY privileges on a resource monitor allow other users to view and modify a specific resource monitor. https://docs.snowflake.com/en/user-guide/resource-monitors#access-control-privileges-for-resource-monitors

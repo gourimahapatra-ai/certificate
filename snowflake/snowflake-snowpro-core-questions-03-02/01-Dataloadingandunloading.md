@@ -130,3 +130,90 @@ https://docs.snowflake.com/en/user-guide/data-load-local-file-system-copy#table-
 - COPY INTO EMPLOYEE FROM @%EMPLOYEE;
 - COPY INTO EMPLOYEE;
 
+
+### Which of the following statements is true regarding the COPY INTO command in Snowflake?
+
+The COPY INTO command requires an active warehouse for execution.
+
+The COPY INTO command requires an active virtual warehouse to provide the compute resources necessary for loading or unloading data. Without an active warehouse, the command cannot execute as there are no compute resources to process the data.
+
+
+### External stages in Snowflake must always include storage credentials within the stage definition. : False
+While external stages can include credentials, it is not required or recommended. The preferred method is to use a storage integration object to securely manage credentials separately from the stage definition. This improves security by preventing direct exposure of sensitive information like access keys.
+
+
+### What is the recommended method for specifying file format properties when using the COPY INTO command?
+
+Using a file format object and referencing it in the stage
+The recommended method is to create a separate file format object and reference it in the stage. This allows for consistency and reusability, as the same file format can be applied across multiple stages without redefinition. This approach also keeps configurations organized and easy to manage.
+
+
+### Which of the following views in Snowflake provides detailed information about table storage, including data compression and partitioning?
+
+TABLE_STORAGE_METRICS
+
+Explanation
+This view provides detailed information about table storage, including data size, compression ratios, and partitioning. It's used to analyze storage utilization for specific tables in Snowflake.
+
+### What information can be obtained from the TABLE_STORAGE_METRICS views in Snowflake? (Choose two.)
+
+Total storage used for Time Travel
+
+Explanation
+The TABLE_STORAGE_METRICS views include details on storage for active databases, time travel, and failsafe storage.
+
+Amount of storage consumed by deleted tables
+
+Explanation
+his view also provides information on storage used by dropped tables, which remain available through time travel and failsafe features.
+
+### Which of the following is the default value for the ON_ERROR option when using Snowflake’s bulk loading process?
+
+ABORT_STATEMENT
+
+Explanation
+The default value for the ON_ERROR option in Snowflake's bulk loading process is ABORT_STATEMENT. This setting stops the entire loading process when any error is encountered in any file or row, ensuring that no partial data is loaded.
+
+ 
+### Which of the following transformations is NOT supported directly in the COPY INTO command in Snowflake?
+
+Filtering rows using a WHERE clause
+
+Explanation
+Filtering rows using a WHERE clause is not supported in the COPY INTO command. The command allows some basic transformations such as column reordering, data type casting, and truncating column values, but complex operations like filtering rows are not permitted.
+
+### Which of the following statements is true about enabling an external table in Snowflake?
+It requires a manual refresh of metadata after enabling.
+
+Explanation
+After enabling an external table, performing a manual metadata refresh is necessary to ensure that the table is aware of any new or updated data files in the external stage. This is typically done using the ALTER EXTERNAL TABLE <table_name> REFRESH; command.
+
+### Which of the following is NOT a type of internal stage in Snowflake?
+
+ Schema stage
+
+Explanation
+There is no "Schema stage" in Snowflake. The internal stages in Snowflake include User stages, Table stages, and Named internal stages. These internal stages allow different levels of access and control, but none is associated with a schema directly.
+
+Named internal stage
+
+Explanation
+The Named internal stage is a flexible and customizable stage created and managed like any other database object in Snowflake.
+
+User stage
+
+Explanation
+The User stage is a valid internal stage tied to individual users.
+
+able stage
+
+Explanation
+The Table stage is another valid internal stage specifically associated with an individual table.
+
+
+### Which of the following statements about Snowflake stages is correct?
+A stage can be either internal or external to Snowflake.
+
+Explanation
+Snowflake stages can be categorized as internal (hosted within Snowflake) or external (integrated with cloud storage services like Amazon S3, Azure Blob Storage, or Google Cloud Storage). They are designed to facilitate data loading and unloading.
+

@@ -16,3 +16,14 @@ See the link for more details: https://docs.snowflake.com/en/user-guide/streams-
 
 Streams do not support materialized view currently.
 
+
+### streams : 
+Snowflake Streams help you keep track of any changes made to a table, such as new data being added (inserts), existing data being modified (updates), or data being removed (deletes). They allow you to query and process only the changed data since the last offset. See the link for more details: https://docs.snowflake.com/en/user-guide/streams-intro
+
+
+
+### Which of the following is true regarding Directory Tables?
+
+Streams can be used with directory tables.
+To use a stream with a directory table, you must create the stream on the stage object.
+

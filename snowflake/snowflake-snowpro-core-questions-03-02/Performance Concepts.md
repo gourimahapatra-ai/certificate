@@ -143,3 +143,142 @@ https://docs.snowflake.com/en/user-guide/warehouses-multicluster#what-is-a-multi
 
 Zero : For a populated table, the clustering depth is the average depth of overlapping micro-partitions for specific columns. The clustering depth starts at 1 (for a well-clustered table) and can be a larger number. For an unpopulated table, the clustering depth is zero. https://docs.snowflake.com/en/user-guide/tables-clustering-micropartitions#label-clustering-depth
 
+
+
+### Which of the following correctly describes materialized views?
+
+### Materialized views are created to improve the performance of specific queries.
+### Materialized view refreshes are performed automatically.
+
+A materialized view is a view that pre-computes data based on a SELECT query. The query's results are pre-computed and physically stored to enhance performance for similar queries that are executed in the future. When the underlying table is updated, the materialized view refreshes automatically, requiring no additional maintenance. Snowflake-managed services perform the update in the background transparent to the user without interfering with the user's experience.
+
+
+### Which of the following are caching mechanisms in Snowflake? Select all that apply.
+
+Metadata Caching
+Query Result Caching
+Warehouse Caching
+
+Metadata caching is used for queries that can be fulfilled directly from metadata, e.g., the row count of a table Query Result Caching is for queries that have been executed already. Warehouse caching is within the virtual warehouse instance and is usually based on queries that have already been executed.
+
+
+### Which query profile results indicate that a large table may not be well clustered? Select all that apply.
+
+-- A significant value for ‘Partitions Scanned.’
+-- The value in the ‘Partitions Total’ equals ‘Partitions Scanned.’
+
+
+### Query Result Cache can be turned off at which levels? Select all that apply.
+
+Account, User, Session
+
+Query result cache is enabled by default but can be turned off at a session, user, or account level using the USE_CACHED_RESULT parameter. https://docs.snowflake.com/en/user-guide/querying-persisted-results
+
+### The Search Optimization service can be used to improve the performance of which type of queries?
+
+Selective point lookup queries
+
+Overall explanation
+The search optimization service can be used to improve the performance of
+
+
+
+Point lookup queries - return only one or a few rows using highly selective filters.
+
+Substring & RegEx searches – queries that use LIKE, ILIKE, & RLIKE
+
+Queries on fields in VARIANT, OBJECT & ARRAY columns – using equality conditions, IN, ARRAY_CONTAINS, ARRAY_OVERLAP, Substring & RegEx and NULL check conditions
+
+Queries that use specific geospatial functions with GEOGRAPHY values.
+
+
+
+https://docs.snowflake.com/en/user-guide/search-optimization-service#understanding-the-search-optimization-service
+
+
+### Which of the following strategies should be used to optimize the performance of a virtual warehouse?
+
+1. Reduce queuing
+
+2. Resolve memory spillage.
+
+3. Increase warehouse size.
+
+4. Try query acceleration.
+
+5. Optimize the warehouse cache.
+
+6. Limit concurrently running queries.
+
+
+
+### Which of the following statements is true about Snowflake's Resource Monitors? (Choose two.)
+
+- Resource Monitors can be set at both account and warehouse levels.
+- They can be used to suspend a warehouse immediately when a limit is exceeded.
+
+### Which table type in Snowflake does NOT support the Failsafe feature?
+- Both Transient Tables and Temporary Tables : Transient Tables and Temporary Tables do not support the Failsafe feature. Failsafe is only available for permanent tables, providing a seven-day recovery period beyond Time Travel.
+
+### The Standard Edition of Snowflake includes disaster recovery features called Fail-safe for up to 7 days beyond Time Travel. True.
+
+The Fail-safe feature, which allows disaster recovery for up to 7 days beyond the Time Travel period, is available in all Snowflake editions, including the Standard Edition.
+
+
+ ### Which of the following privileges must a role possess to view executed queries and analyze them in Snowflake? Moniter
+
+ The monitor privilege allows the role to view and analyze executed queries, which is necessary for monitoring virtual warehouses and understanding query performance.
+
+
+### Where can users find the query profile for a completed query in Snowflake? (Choose two.)
+
+Directly from the Worksheet for the last executed query : Users can also directly access the query profile for the most recent query executed through the Worksheet interface.
+
+In the Query History under the Activity section in Snowflake : The query profile is available in the Query History under the Activity section in Snowflake, where users can access details about executed queries.
+
+
+### Queries using UDFs are not eligible for the result cache because the results may vary based on the function execution.
+
+The query has been run multiple times within the last 24 hours. : Running the query multiple times within the last 24 hours will refresh the query result cache rather than invalidate it, as long as the data and conditions remain unchanged.
+
+### Which of the following statements is true about Snowflake’s Search Optimization Service?
+It is a serverless feature that incurs additional compute and storage costs
+
+Explanation
+The Search Optimization Service is a serverless feature in Snowflake, which incurs additional compute and storage costs as it maintains search access paths for optimized querying.
+
+### What is the primary difference between the "Standard" and "Economy" scaling policies in Snowflake's multi-cluster warehouses?
+
+The "Standard" policy prioritizes performance, while the "Economy" policy conserves credits.
+
+Explanation
+The Standard policy favors performance by starting new clusters as soon as needed, while the Economy policy is designed to be more conservative, saving credits even if it may result in slight delays.
+
+### Which of the following caching mechanisms in Snowflake does not require virtual warehouses to be active for it to work?
+Query Result Cache
+
+Explanation
+The Query Result Cache stores the results of executed queries for 24 hours. If the same query is executed again within this timeframe, Snowflake can return the cached result without needing to activate a virtual warehouse, thereby saving compute resources and reducing latency.
+
+
+### When configuring a multi-cluster warehouse in Snowflake with the economy scaling policy, under what condition will Snowflake start an additional cluster?
+
+When the system predicts workload sufficient for at least six minutes
+
+Explanation
+In the economy scaling policy, Snowflake adds an additional cluster only when it determines there is enough workload to justify running the new cluster for at least six minutes.
+
+
+### Which of the following types of queries is most likely to benefit from Snowflake's Search Optimization Service?
+Selective point lookup queries that use equality predicates in the WHERE clause.
+
+Explanation
+The Search Optimization Service is designed to improve the performance of selective point lookup queries, especially those that use equality predicates (e.g., WHERE amount = 100). It works best when the filter returns a small number of rows.
+
+
+### Which method is not a valid way to access query history in Snowflake?
+
+Accessing the Query Logs stored in the cloud provider’s object storage
+
+Explanation
+Query logs are not directly accessed from the cloud provider's object storage. Instead, Snowflake offers structured ways to access query history, such as through the SnowSite interface, Information Schema, or Account Usage Schema.
