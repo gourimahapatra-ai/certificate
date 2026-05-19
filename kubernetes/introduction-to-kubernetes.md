@@ -80,3 +80,26 @@
 - **Containers improve server utilization and scalability**
 - **Containerized applications are flexible and interoperable**
 - **Containers integrate easily with automation and cloud-native tools**
+
+
+## Key Highlights of Containers and Container Images
+
+- **Containers are application-centric deployment environments**
+- **Containers support high-performing and scalable applications**
+- **Containers can run on any infrastructure platform**
+- **Containers are ideal for microservices architecture**
+- **Containers provide isolated environments for applications**
+- **Isolation prevents interference between applications**
+- **Microservices are lightweight and independently developed**
+- **Microservices may use different programming languages and dependencies**
+- **Applications are packaged together with required libraries and dependencies**
+- **Containers encapsulate applications and their dependencies**
+- **Containers do not run applications directly — they run container images**
+- **Container images include application code, runtime, libraries, and dependencies**
+- **A container image acts as the blueprint for a container**
+- **Containers provide isolated executable environments**
+- **Container images can be deployed across multiple environments**
+- **Containers can run on workstations, virtual machines, and cloud platforms**
+- **Containerization improves portability and deployment consistency**
+
+![alt text](image.png)
