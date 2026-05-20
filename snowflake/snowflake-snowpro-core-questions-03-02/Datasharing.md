@@ -75,3 +75,7 @@ SYSTEM$IS_LISTING_PURCHASED system function can be used to control which data is
 
 https://other-docs.snowflake.com/en/collaboration/provider-listings-preparing#preparing-shares-for-a-paid-listing
 
+
+### When using Snowflake's data sharing feature, the consumer can modify the data within the shared database.
+
+In Snowflake’s data sharing feature, the consumer receives read-only access to the shared database. The consumer can query the data using their own compute resources but cannot modify, add, or delete any objects or data in the shared database. The provider retains control and management of the data.

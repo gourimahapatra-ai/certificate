@@ -465,3 +465,76 @@ Explanation
 Snowflake requires a minimum key size of 2048 bits for key-pair authentication to ensure a high level of security.
 
 
+# Federated Authentication in Snowflake
+
+## What Federated Authentication Is
+**Federated Authentication** in Snowflake allows users to log in using an **external Identity Provider (IdP)** instead of Snowflake‑managed passwords.  
+Snowflake acts as the **Service Provider (SP)**, while authentication happens entirely at the IdP.
+
+This enables **Single Sign‑On (SSO)** using **SAML 2.0**.
+
+---
+
+## How It Works
+1. A user attempts to access Snowflake.
+2. Snowflake redirects the user to the configured **SAML 2.0 IdP** (e.g., Okta, Azure AD, ADFS).
+3. The IdP authenticates the user.
+4. The IdP sends a **SAML assertion** back to Snowflake.
+5. Snowflake establishes the session without ever seeing the user’s password.
+
+This workflow is described in Snowflake’s federated authentication documentation. 
+
+---
+
+## Supported Identity Providers
+Snowflake supports **any SAML 2.0‑compliant IdP**, including:  
+- Okta  
+- Azure Active Directory  
+- ADFS  
+- OneLogin  
+- Ping Identity  
+
+These IdPs authenticate users and send SAML responses to Snowflake. 
+
+---
+
+## Why Organizations Use Federated Authentication
+- **Centralized identity management**  
+- **Passwordless login** (Snowflake never stores or sees user passwords)
+- **Stronger security** (MFA, conditional access, device policies enforced by IdP)
+- **Seamless SSO experience** across enterprise applications
+
+---
+
+## Key Snowflake Component: SAML2 Security Integration
+To enable federated authentication, Snowflake requires a **SAML2 security integration**, created using:
+
+```sql
+CREATE SECURITY INTEGRATION my_idp
+  TYPE = SAML2
+  ENABLED = TRUE
+  METADATA_URL = '<IdP metadata URL>';
+```
+
+This integration establishes trust between Snowflake and the IdP. 
+
+---
+
+## Exam‑Ready Takeaway
+> **Federated Authentication in Snowflake allows users to authenticate through an external SAML 2.0 Identity Provider (IdP), enabling secure Single Sign‑On (SSO) without Snowflake managing passwords.**
+
+### In Snowflake, the ownership of a securable object can be transferred to another role. ?True :
+
+Explanation
+The ownership of a securable object in Snowflake can be transferred to another role using the appropriate grant command. This allows for the flexibility of managing access control as roles and responsibilities change.
+
+### Which of the following login methods support multi-factor authentication (MFA) in Snowflake? (Choose three)
+
+Snowflake Web Interface (UI)
+- The Snowflake web interface also supports MFA for secure browser-based access.
+
+SnowSQL
+- SnowSQL supports MFA, which enhances the security of command-line access.
+
+Snowflake ODBC/JDBC drivers
+- The ODBC and JDBC drivers for Snowflake can be configured to support MFA.

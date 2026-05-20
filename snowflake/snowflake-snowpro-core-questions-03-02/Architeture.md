@@ -96,3 +96,22 @@ True
 
 Explanation
 In Snowflake, each account is tied to a specific cloud provider (like AWS, Azure, or GCP) and a particular region within that provider. A single Snowflake account does not span multiple regions. For organizations requiring access to multiple regions, they need to set up separate accounts for each region.
+
+
+### Which of the following statements about the database storage layer in Snowflake is true?
+It stores data using a hybrid columnar storage format.
+
+Explanation
+Snowflake’s storage layer uses a hybrid columnar storage format, which is optimized for analytical workloads. It stores data in compressed "blobs" managed by the cloud provider (e.g., AWS S3 or Azure containers) for efficiency and performance.
+
+### What is a primary benefit of using Snowflake external functions?
+They allow access to external services and third-party libraries
+
+Explanation
+Snowflake external functions allow integration with external services, such as AWS Lambda or Azure Functions, enabling users to leverage third-party libraries and services that aren't available within Snowflake itself.
+
+### Which of the following statements is true about the storage layer in Snowflake’s architecture?
+It compresses data into blobs stored on external cloud providers.
+
+Explanation
+Snowflake’s database storage layer compresses data into blobs and stores them on external cloud providers like AWS or Azure. This architecture supports efficient data retrieval and storage management.

@@ -48,3 +48,83 @@ ACCOUNT_USAGE.TABLE_STORAGE_METRICS
 
 Explanation
 This view provides detailed information about table storage, including the breakdown into active bytes, time travel bytes, and failsafe bytes.
+
+### Which command is used to create a row access policy in Snowflake? CREATE ROW ACCESS POLICY
+The correct command to create a row access policy in Snowflake is CREATE ROW ACCESS POLICY. This command is used to define a schema-level object that specifies the conditions under which rows should be visible based on user or role information.
+
+
+### What action should a user take to recover a dropped table using Snowflake's Time Travel if a new table with the same name has already been created?
+Rename the new table before attempting to recover the old one
+
+This is the correct approach. If a new table with the same name exists, Snowflake will not allow the recovery of the dropped table with the same name. The user must first rename or drop the current table to free up the name for restoration.
+
+
+### Which of the following is true about data encryption in Snowflake? (Choose two)
+TLS 1.2 is used for encrypting data in transit.
+TLS 1.2 is used for encrypting data in transit: This is also correct. Snowflake ensures that all data in transit is encrypted using TLS 1.2, providing secure communication between clients and Snowflake.
+
+Snowflake uses AES-256 encryption for data at rest.
+Snowflake uses AES-256 encryption for data at rest: This is true. Snowflake automatically encrypts all data at rest using AES-256, which is a strong and industry-standard encryption algorithm.
+
+### Which of the following statements about column-level security features in Snowflake is correct?
+Dynamic Data Masking applies only at query runtime based on the role of the user executing the query.
+
+Dynamic Data Masking in Snowflake occurs at query runtime and depends on the role of the user running the query, ensuring that only authorized users can view sensitive data.
+
+# Row Access Policies in Snowflake — Correct Statements (Choose TWO)
+
+## ✅ Correct Statements
+
+### **1. Row Access Policies are schema‑level objects that dynamically filter rows at query time.**
+A Row Access Policy (RAP) is created in a **schema** and attached to one or more tables or views.  
+Snowflake evaluates the policy **every time a query runs**, ensuring users only see rows they are authorized to see.
+
+---
+
+### **2. Row Access Policies are evaluated using the *policy owner’s role*, not the querying user’s role.**
+When Snowflake evaluates a RAP, it uses the **role that owns the policy**.  
+This ensures users do **not** need direct access to sensitive lookup tables referenced inside the policy.
+
+---
+
+## ❌ Incorrect Statements (Common Distractors)
+
+### **“Row Access Policies apply only to SELECT queries.”**  
+False — they also apply to rows affected by `UPDATE`, `DELETE`, and `MERGE`.
+
+### **“Row Access Policies prevent inserts or updates to hidden rows.”**  
+False — RAPs filter visibility, not write operations.
+
+### **“A Row Access Policy can only be applied to one table.”**  
+False — a single RAP can be attached to **multiple tables and views**.
+
+---
+
+## 📘 Summary
+> The two correct statements are:  
+> ✔ RAPs are schema‑level objects evaluated at query time.  
+> ✔ RAPs evaluate using the policy owner’s role, not the querying user’s role.
+
+Row Access Policies are evaluated dynamically at query runtime, not when data is loaded. They commonly use context functions such as:
+
+CURRENT_ROLE() - filters based on user's active role
+
+CURRENT_USER() - filters based on username
+
+CURRENT_ACCOUNT() - filters based on account
+
+IS_ROLE_IN_SESSION() - checks if a role is available
+
+### Snowflake's zero-copy cloning creates a completely independent object that does not share any micro-partitions with the original object.
+False
+
+Zero-copy cloning in Snowflake does not create a fully independent copy of the data; instead, it references the same micro-partitions as the original object. This means that the clone and the original object share the same storage until modifications are made, which then create new micro-partitions for the changes.
+
+
+### If a Snowflake user wants to restore a dropped table within the retention period, which of the following commands should they use?
+
+UNDROP TABLE
+
+Explanation
+The UNDROP TABLE command is used to restore a table that has been dropped, provided the table is still within the configured retention period for time travel.
+

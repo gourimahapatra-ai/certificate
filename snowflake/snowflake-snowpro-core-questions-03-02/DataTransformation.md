@@ -107,3 +107,33 @@ Automatic Reclustering
 
 Explanation
 Snowflake uses automatic reclustering when clustering keys are defined. This serverless feature reorganizes the micro partitions based on the clustering keys to optimize query performance and data distribution.
+
+### Which of the following is mandatory when creating a stored procedure in Snowflake?
+
+A return type must be declared, even if the procedure does not return a value.
+
+A return type is always required when creating a stored procedure, even if it does not return any actual value. This is a syntax requirement in Snowflake’s procedure creation process, making this option correct.
+
+### Which of the following can be used to access an element within an array in a Snowflake VARIANT column?
+Square brackets ([])
+
+Explanation
+Square brackets are used to access specific elements within arrays stored in a Snowflake VARIANT column. For example, [0] would access the first element of the array.
+
+
+### A company has a large fact table containing 5 years of sales transactions with 2 billion rows. Query performance has degraded significantly, and the data engineering team notices that most queries filter by the TRANSACTION_DATE column. The team wants to physically reorganize the table's micro-partitions to improve query performance when filtering on this date column. Which Snowflake feature should they use?
+
+Create a materialized view that pre-filters data by date ranges to improve query performance.
+
+Explanation
+While materialized views can improve query performance by pre-computing and storing results, they don't address the underlying issue of micro-partition organization in the base table. Additionally:
+
+Materialized views add storage costs (duplicate data)
+
+They're better suited for complex aggregations or joins, not simple date filtering
+
+The question specifically asks about physically reorganizing the table's micro-partitions
+
+Queries against the base table would still experience poor performance
+
+

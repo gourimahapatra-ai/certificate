@@ -27,3 +27,9 @@ Snowflake Streams help you keep track of any changes made to a table, such as ne
 Streams can be used with directory tables.
 To use a stream with a directory table, you must create the stream on the stage object.
 
+### In Snowflake, the standard stream type supports only the INSERT operation on external tables.
+
+False
+
+Explanation
+The standard stream type in Snowflake supports INSERT, UPDATE, and DELETE operations for tables other than external tables. The INSERT-only restriction applies to append-only and insert-only streams, but the standard stream supports all DML operations on supported tables.

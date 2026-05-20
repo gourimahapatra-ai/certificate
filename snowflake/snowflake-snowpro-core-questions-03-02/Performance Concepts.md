@@ -282,3 +282,57 @@ Accessing the Query Logs stored in the cloud provider’s object storage
 
 Explanation
 Query logs are not directly accessed from the cloud provider's object storage. Instead, Snowflake offers structured ways to access query history, such as through the SnowSite interface, Information Schema, or Account Usage Schema.
+
+
+### Which type of resource monitor action in Snowflake will suspend a warehouse immediately, even if there are currently running queries?
+****Suspend immediately
+
+Explanation
+This action suspends the warehouse instantly, terminating any ongoing queries. It is used when strict credit usage limits must be enforced.
+
+### Which of the following statements is true about the Search Optimization Service in Snowflake?
+
+It adds a search access path for efficient lookups and is maintained automatically by Snowflake.
+
+The Search Optimization Service creates a search access path to speed up specific queries (e.g., point lookups, substring searches) and is managed automatically by Snowflake once it is enabled. This means that Snowflake takes care of the maintenance and updates without user intervention.
+
+### What is the key difference between the Row (Bernoulli) sampling method and the System (Block) sampling method in Snowflake?
+
+Row sampling applies a random probability to each row, whereas system sampling applies sampling to entire micro-partitions.
+
+Explanation
+The Row (Bernoulli) sampling method applies a random probability to each individual row, whereas the System (Block) sampling method applies to entire micro-partitions, making it more efficient for larger datasets but less random.
+
+
+### Which of the following statements about Snowflake's clustering keys is not true?
+
+Clustering keys are ideal for every table, regardless of size and query patterns.
+
+Explanation
+Clustering keys are not ideal for every table. They are most effective for large tables with a high number of micro-partitions and specific query patterns (e.g., selective queries). For smaller tables or tables with low cardinality columns, clustering may not provide significant benefits and could lead to unnecessary costs.
+
+### Which of the following conditions must be met for the result cache in Snowflake to be used? (Choose two.)
+The query must be executed within 24 hours of its previous execution.
+
+Explanation
+The result cache in Snowflake is available for up to 24 hours. If the query is executed again within this period, the result cache can be used to improve performance.
+
+The underlying table data and micro-partitions must not have changed.
+
+Explanation
+For the result cache to be used, the underlying table data and micro-partitions must remain unchanged since the query was last executed.
+
+### Which of the following best describes the credit consumption behavior when using the Search Optimization Service in Snowflake?
+
+Credits are consumed serverlessly and based on the maintenance of the search access path
+
+Explanation
+The Search Optimization Service is a serverless feature in Snowflake. Credits are consumed based on the maintenance of the search access path rather than warehouse activity, as this feature operates independently of active warehouses.
+
+
+### Which of the following is not allowed when creating a materialized view in Snowflake?
+
+Using window functions
+
+Explanation
+Window functions are not allowed in materialized views in Snowflake. Materialized views support only a subset of SQL operations and must reference a single base table.

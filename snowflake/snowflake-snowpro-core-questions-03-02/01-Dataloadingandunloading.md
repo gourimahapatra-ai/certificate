@@ -217,3 +217,56 @@ A stage can be either internal or external to Snowflake.
 Explanation
 Snowflake stages can be categorized as internal (hosted within Snowflake) or external (integrated with cloud storage services like Amazon S3, Azure Blob Storage, or Google Cloud Storage). They are designed to facilitate data loading and unloading.
 
+
+### Which of the following copy options would you use to validate data without actually loading it into a Snowflake table?
+
+VALIDATION_MODE
+
+Explanation
+VALIDATION_MODE is used to validate the data in a file without actually loading it. This option can be set to RETURN_ERRORS to display any errors in the data or RETURN_ROWS to preview specific rows.
+
+### Which function would you use to insert a JSON string as a VARIANT in Snowflake?
+PARSE_JSON
+
+Explanation
+The PARSE_JSON function is used to convert a JSON string into a VARIANT type in Snowflake. It interprets the string as a JSON document, allowing it to be stored and queried as a VARIANT.
+
+### What happens if data is loaded using the COPY command from a stage located in a different cloud region or provider than the Snowflake account?
+
+Data transfer costs may apply, depending on the region or cloud provider.
+
+If the files being loaded using the COPY command are located in a stage on a different cloud region or cloud provider than the Snowflake account, additional data transfer costs may apply.
+
+### When configuring a directory table for an existing stage in Snowflake, which of the following steps is necessary to ensure it shows metadata for the files?
+
+Refresh the stage using ALTER STAGE <stage_name> REFRESH after enabling the directory table.
+
+Explanation
+After enabling the directory table, you must refresh the stage using the ALTER STAGE … REFRESH command. This updates the metadata and registers the files within the directory table.
+
+### Which of the following are required when using the COPY INTO command in Snowflake to load data into a table? (Choose two.)
+
+The data files must be staged in either an internal or external stage before execution.
+- This is correct because before using the COPY INTO command, data files must be placed in either an internal or external stage. The COPY INTO command references these staged files for loading data into Snowflake tables.
+
+A virtual warehouse must be active and selected to provide compute resources.
+- This is also correct as an active virtual warehouse is necessary for the COPY INTO command. It provides the required compute resources needed to process and load the data into the target table.
+
+### Which of the following Snowflake stages is automatically created for each user and can only be accessed by the respective user?
+
+User stage : The User stage is automatically created for each Snowflake user and is accessible only by that user. It is specifically designed for loading files that an individual user might want to manage separately, and it cannot be altered or modified by others.
+
+
+### Which of the following is the recommended method for securely providing access credentials when creating an external stage in Snowflake?
+
+Using a storage integration object
+
+Explanation
+The most secure method for providing access credentials when creating an external stage is by using a storage integration object. This method ensures that credentials are stored securely and are not visible or accessible to users who have access to the stage itself.
+
+### Which of the following ON_ERROR options in a Snowflake COPY INTO command will skip the entire file when a certain number of errors occur?
+
+SKIP_FILE with a specified number
+
+Explanation
+SKIP_FILE with a specified number (e.g., SKIP_FILE=10) is used to skip the entire file if the number of errors in the file reaches or exceeds the specified threshold. This option is useful when you want to continue loading other files while ignoring problematic files that exceed the error limit.
