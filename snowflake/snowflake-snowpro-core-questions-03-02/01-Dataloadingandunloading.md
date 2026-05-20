@@ -270,3 +270,22 @@ SKIP_FILE with a specified number
 
 Explanation
 SKIP_FILE with a specified number (e.g., SKIP_FILE=10) is used to skip the entire file if the number of errors in the file reaches or exceeds the specified threshold. This option is useful when you want to continue loading other files while ignoring problematic files that exceed the error limit.
+
+### Which Snowflake command is used to refresh metadata for a directory table manually?
+ALTER STAGE REFRESH
+
+Explanation
+The correct command to refresh metadata for a directory table manually in Snowflake is ALTER STAGE REFRESH. This command updates the metadata for a specified stage, including the files in the stage, making it the appropriate choice for refreshing metadata for a directory table.
+
+
+### What happens if the file format is not explicitly specified in either the Snowflake stage or the COPY INTO command when loading data?
+
+The COPY INTO command will fail and return an error.
+
+Without a specified file format in both the stage and the COPY INTO command, Snowflake lacks the necessary information to parse the data, leading to an error.
+
+### Which of the following is a valid use case for a user stage in Snowflake?
+Loading data into multiple tables from files stored on a local system.
+
+Explanation
+This is correct because a user stage is suitable for loading files stored locally into multiple tables, especially when no external cloud provider is available.

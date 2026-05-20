@@ -336,3 +336,57 @@ Using window functions
 
 Explanation
 Window functions are not allowed in materialized views in Snowflake. Materialized views support only a subset of SQL operations and must reference a single base table.
+
+### Which type of resource monitor action in Snowflake will complete the current workload before suspending a warehouse?
+Suspend and Notify
+
+Explanation
+The "Suspend and Notify" action suspends the warehouse after the current workload completes, ensuring that ongoing queries finish processing before the warehouse is paused.
+
+### What happens when a materialized view is paused in Snowflake?
+Maintenance is suspended, delaying the update costs
+
+Explanation
+Pausing a materialized view suspends its maintenance, delaying updates and the associated costs until the view is resumed.
+
+
+### Which type of queries benefit the most from the Search Optimization Service in Snowflake?
+Point lookup queries with equality predicates
+
+Explanation
+The Search Optimization Service is designed to improve the performance of point lookup queries that use equality predicates (e.g., WHERE amount = 1). It optimizes selective queries where only a few rows are retrieved.
+
+### Which of the following statements is true regarding Snowflake’s automatic reclustering process?
+
+It is a serverless feature and incurs additional compute costs
+
+Explanation
+Snowflake's automatic reclustering is a serverless feature, meaning it does not require an active virtual warehouse. However, it still uses compute resources and thus incurs additional costs.
+
+### Which of the followQuery History in the Snowflake web interfaceing are methods for accessing query history in Snowflake? (Choose three.)
+Query History table function in the Information Schema
+
+Explanation
+The Query History table function in the Information Schema offers an SQL-based way to access query history and details.
+
+Query History in the Snowflake web interface
+
+Explanation
+The Snowflake web interface provides access to the query history through the Query History tab.
+
+Query History view in the Account Usage schema
+
+Explanation
+The Query History view in the Account Usage schema is another way to access query history using SQL.
+
+### When the table has only one or two micro partitions
+
+Explanation
+Clustering keys are less effective on tables with only one or two micro partitions because there isn't enough data to benefit from partition pruning.
+
+### When should a clustering key typically be avoided in Snowflake?
+
+When the table has only one or two micro partitions
+
+Explanation
+Clustering keys are less effective on tables with only one or two micro partitions because there isn't enough data to benefit from partition pruning.

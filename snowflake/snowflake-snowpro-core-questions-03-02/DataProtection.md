@@ -128,3 +128,46 @@ UNDROP TABLE
 Explanation
 The UNDROP TABLE command is used to restore a table that has been dropped, provided the table is still within the configured retention period for time travel.
 
+### What is the primary difference between the Account Usage Schema and the Information Schema in Snowflake? (Choose the correct option.)
+
+The Account Usage Schema includes dropped objects, while the Information Schema does not.
+
+Explanation
+correct answer because the Account Usage Schema contains information about dropped objects, while the Information Schema does not include such information.
+
+### Which of the following is NOT true regarding Snowflake’s data encryption at rest?
+
+Snowflake uses AES 256-bit encryption for data at rest.
+
+Explanation
+This is a true statement, as Snowflake employs AES 256-bit encryption for all stored data.
+
+Your answer is incorrect
+Rekeying is available in the Enterprise Edition and must be enabled manually.
+
+Explanation
+This statement is accurate; rekeying of data is a feature that becomes available starting from the Enterprise Edition, but it requires manual activation.
+
+Correct answer
+Data encryption at rest is an optional feature that must be enabled.
+
+Explanation
+Data encryption at rest is not an optional feature in Snowflake; it is always enabled by default. All data managed by Snowflake is encrypted automatically using AES 256-bit encryption. Users do not have to take any action to enable this feature, as it is an integral part of Snowflake’s security model.
+
+Key rotation occurs automatically every 30 days.
+
+Explanation
+This is also true; Snowflake automatically rotates encryption keys every 30 days for enhanced security.
+
+### Which of the following is true about Dynamic Data Masking in Snowflake?
+
+It masks data based on the currently selected role at query runtime.
+
+Explanation
+Dynamic Data Masking works at query runtime based on the currently selected role, allowing role-specific access to sensitive information.
+
+### What is the default time retention period for historical data in Snowflake for new accounts?
+1 day
+
+Explanation
+The default data retention period for Snowflake accounts is 1 day. This applies to all accounts unless the retention period is explicitly modified.

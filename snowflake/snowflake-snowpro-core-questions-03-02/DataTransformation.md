@@ -137,3 +137,37 @@ The question specifically asks about physically reorganizing the table's micro-p
 Queries against the base table would still experience poor performance
 
 
+### Which of the following statements is true regarding Snowflake’s window functions?
+
+Correct answer
+Window functions can operate on a subset of rows but return the same number of rows as the input.
+
+Explanation
+Window functions can operate on a subset of rows while still returning the same number of rows as the input dataset. They are used for calculations like running totals, ranks, and moving averages.
+
+### Which of the following commands would be used to remove a clustering key from an existing table in Snowflake?
+ALTER TABLE DROP CLUSTERING KEY
+
+Explanation
+The correct command in Snowflake for removing a clustering key from an existing table is ALTER TABLE DROP CLUSTERING KEY.
+
+
+### What is the primary purpose of the worksheet feature in the Snowflake interface?
+To execute and organize SQL queries
+
+Explanation
+The worksheet feature in the Snowflake interface is designed primarily for executing and organizing SQL queries. It allows users to create, edit, and run SQL commands. Worksheets also support naming, sharing, and storing SQL scripts for later access.
+
+### Which statement is true about tasks and their usage in Snowflake?
+
+A task can use Snowflake-managed compute if no warehouse is specified.
+
+Explanation
+This statement is correct. A task in Snowflake can use Snowflake-managed compute if no warehouse is specified. This allows tasks to run without the need to explicitly assign a warehouse, making it more flexible and efficient.
+
+### In Snowflake, when cloning a database or schema, all child objects, including named internal stages, are cloned.
+
+False
+
+Explanation
+Named internal stages cannot be cloned in Snowflake. While databases, schemas, and their child objects are cloned, named internal stages and pipes that do not reference external stages are exceptions and are not cloned.

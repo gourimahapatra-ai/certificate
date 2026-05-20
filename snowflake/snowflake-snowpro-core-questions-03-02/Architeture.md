@@ -115,3 +115,22 @@ It compresses data into blobs stored on external cloud providers.
 
 Explanation
 Snowflake’s database storage layer compresses data into blobs and stores them on external cloud providers like AWS or Azure. This architecture supports efficient data retrieval and storage management.
+
+
+### In Snowflake, databases and schemas are the only objects that can be created within an account.
+False
+
+Explanation
+This statement is false. Snowflake supports multiple types of objects within an account, including databases, schemas, roles, users, virtual warehouses, resource monitors, and other database objects such as tables, views, functions, stages, tasks, streams, and pipes.\
+
+### Which of the following statements about Snowflake's "table storage metrics" views is true?
+They are available in both the Information Schema and Account Usage Schema.
+
+Explanation
+The "table storage metrics" views are available in both the Information Schema and the Account Usage Schema, offering detailed table storage information including active bytes, time travel, and failsafe data.
+
+### What type of architecture does Snowflake use?
+Multi-cluster Shared Data Architecture
+
+Explanation
+Snowflake uses a Multi-cluster Shared Data Architecture, which combines the benefits of both shared disk and shared nothing architectures. It features a central data repository for simplicity and multiple compute clusters for scalability and performance.
