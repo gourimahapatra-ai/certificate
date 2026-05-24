@@ -421,3 +421,97 @@ def distinct_topics():
     return dlt.read("bronze").select("topic").distinct()
 
 ```
+
+### Stream from Multiplex Bronze
+```python
+import dlt
+import pyspark.sql.functions as F
+
+source = spark. conf.get("source")
+
+)
+
+bpm_schema = "device_id LONG, time TIMESTAMP, heartrate DOUBLE"
+
+@dlt.table(
+  table_properties={"quality": "bronze"}
+
+def bpm_bronze():
+return (
+  dlt.read_stream("bronze")
+  .filter("topic = 'bpm'")
+  .select(F.from_json(F.col("value").cast("string"), bpm_schema).alias("v"))
+  .select("v .* ")
+
+```
+
+# Silver Layer for Quality Enforcement  
+(Concise Databricks Professional Exam Summary)
+
+## 1. Objectives of the Silver Layer
+- **[Validate data quality](ca://s?q=Explain_data_quality_validation_in_Silver_layer)** — enforce schema, apply constraints, remove bad or malformed records.
+- **[Enrich and transform data](ca://s?q=How_is_data_enriched_in_Silver_layer)** — standardize formats, apply business rules, join with reference data.
+- **[Optimize data layout and storage](ca://s?q=Optimizing_data_layout_in_Silver_layer)** — use partitioning, Z‑Ordering, and efficient file sizes for downstream performance.
+- **[Provide a single source of truth](ca://s?q=Silver_layer_single_source_of_truth)** — deliver clean, reliable, analytics‑ready datasets for BI, ML, and Gold‑layer consumption.
+
+## Exam‑Ready Takeaway
+The Silver layer converts raw Bronze data into **validated**, **clean**, **enriched**, and **performance‑optimized** datasets that serve as the **trusted foundation** for all downstream analytics.
+
+# Schema Enforcement & Evolution  
+(Concise Databricks Professional Exam Summary)
+
+## 1. Schema Enforcement
+- **[Prevents bad records](ca://s?q=Explain_schema_enforcement_in_Delta_Lake)** from entering the table.  
+- Rejects data with **type mismatches**, **missing fields**, or **unexpected fields**.  
+- Ensures **data quality**, **consistency**, and **predictable downstream behavior**.
+
+---
+
+## 2. Schema Evolution
+- **[Allows adding new fields](ca://s?q=How_schema_evolution_adds_new_fields_in_Delta)** to support changing production schemas.  
+- Useful when new attributes appear in **nested JSON**, IoT payloads, or evolving event schemas.  
+- **Cannot remove fields** — evolution is additive only.  
+- Previously written records show the **new field as `NULL`**.  
+- Underlying Parquet files are **not rewritten**; the new field exists only in **metadata** and is read dynamically.
+
+---
+
+## Exam‑Ready Takeaway
+- **Enforcement** → blocks incompatible data.  
+- **Evolution** → adds new fields safely without rewriting old data.  
+- Old records remain untouched; new columns appear as **NULL** until populated.
+
+# Alternative Quality Check Approaches  
+(Concise Databricks Professional Exam Summary)
+
+## 1. **[Validation Field Approach](ca://s?q=Explain_validation_field_approach_in_Delta)**
+- Add a dedicated **validation column** that stores results of quality checks.  
+- **NULL = passed**, non‑null = validation error details.  
+- Allows downstream systems to filter or inspect invalid records without rejecting the entire batch.
+
+---
+
+## 2. **[Quarantine Non‑Compliant Data](ca://s?q=How_to_quarantine_bad_data_in_Delta_Lake)**
+- Route invalid or malformed records to a **separate quarantine table/location**.  
+- Keeps the main table clean while preserving bad data for debugging, reprocessing, or compliance review.
+
+---
+
+## 3. **[Warn Without Failing](ca://s?q=Warn_without_failing_in_streaming_quality_checks)**
+- Instead of failing the pipeline, write **additional fields** capturing constraint check results.  
+- Enables soft‑validation: pipeline continues running while still surfacing data quality issues.  
+- Useful for gradual enforcement or monitoring data drift.
+
+---
+
+## Exam‑Ready Takeaway
+Quality checks can be enforced through:  
+1. **Validation fields** (inline error capture)  
+2. **Quarantine tables** (isolate bad data)  
+3. **Warning‑only checks** (non‑blocking constraints)  
+
+These approaches improve reliability without sacrificing pipeline uptime.
+
+![alt text](image-18.png)
+![alt text](image-19.png)
+![alt text](image-20.png)
