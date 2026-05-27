@@ -86,6 +86,14 @@ Here, the “Max” metrics task took 10x the time and read about 5x the data of
 Cloning can occur incrementally. Executing the CREATE OR REPLACE TABLE command can sync changes from the source to the target location.
 
 Now, If you run DESCRIBE HISTORY orders_archive, you will see a new version of CLONE operation occurred on the table.
+
+![alt text](image-10.png)
+
+## Biggest Risk
+use VACUUM : source files may get deleted. Then shallow clone can fail with:
+
+**FileNotFoundException** : because it still references source files.
+![alt text](image-11.png)
 </details>
 
 <details>
@@ -582,7 +590,154 @@ https://docs.databricks.com/aws/en/compute/clusters-manage#cluster-level-permiss
 </details>
 
 <details>
-<summary> </summary>
+<summary>pathGlobFilter </summary>
+The pathGlobFilter option allows you to filter input files based on a glob pattern, such as *.png, when using Auto Loader.
+
+https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/patterns
+
+</details>
+
+<details>
+<summary>Add notifications on a job</summary>
+https://docs.databricks.com/aws/en/jobs/notifications
+
+Job-level notifications: Trigger only when the entire job succeeds or fails.
+
+This means if an individual task fails but is retried successfully, no notification is sent until the overall job completes or fails.
+
+Task-level notifications: Trigger for each task event, including failures, or successful completions.
+
+</details>
+
+<details>
+<summary>OAuth token federation for a Databricks service principal </summary>
+
+https://docs.databricks.com/aws/en/dev-tools/auth/#authorization-methods
+Databricks Asset Bundles are a feature of the Databricks CLI. To enable the CLI to authenticate to Databricks without managing Databricks secrets, it’s recommended to use OAuth token federation for a Databricks service principal in the target workspace.
+</details>
+
+<details>
+<summary> READ permission on the “DataOps-Prod” scope</summary>
+The secret access permissions are as follows:
+
+
+
+MANAGE - Allowed to change ACLs, and read and write to this secret scope.
+
+WRITE - Allowed to read and write to this secret scope.
+
+READ - Allowed to read this secret scope and list what secrets are available.
+
+
+
+Each permission level is a subset of the previous level’s permissions (that is, a principal with WRITE permission for a given scope can perform all actions that require READ permission).
+
+
+</details>
+
+<details>
+<summary>Data Sharing </summary>
+1- Databricks-to-Databricks sharing (D2D): it lets you share data from your Unity Catalog-enabled workspace with clients who also have access to a Unity Catalog-enabled Databricks workspace.
+
+This approach uses the Delta Sharing server that is built into Databricks and provides support for notebook sharing, Unity Catalog data governance, auditing, and usage tracking for both providers and recipients.
+
+2- Databricks open sharing protocol (D2O): It lets you share data that you manage in a Unity Catalog-enabled Databricks workspace with users on any computing platform.
+
+This approach also uses the Delta Sharing server that is built into Databricks and is useful when you manage data using Unity Catalog and want to share it with users who don't use Databricks or don't have access to a Unity Catalog-enabled Databricks workspace.
+
+So, D2D is optimized for seamless sharing within the Databricks ecosystem, whereas D2O extends interoperability to external platforms that support the open Delta Sharing protocol.
+</details>
+
+<details>
+<summary>Cluster</summary>
+
+https://docs.databricks.com/aws/en/compute/use-compute#what-are-compute-access-modes
+
+</details>
+
+<details>
+<summary>dlt.expect_all </summary>
+
+dlt.expect_all enforces all the specified data quality rules, writes both valid and invalid records to the target table, and captures metrics about any rule violations.
+
+dlt.expect would not fully meet the requirements because it applies expectations individually but doesn’t automatically enforce all of them together as a group. Similarly, dlt.expect_or_drop removes individual invalid records, and dlt.expect_or_fail stops the pipeline on individual rule violations. You can group multiple expectations together and specify collective actions using the functions dlt.expect_all_or_drop, and dlt.expect_all_or_fail.
+
+Note: Databricks has recenlty open-sourced this solution, integrating it into the Apache Spark ecosystem under the name Spark Declarative Pipelines (SDP).
+
+![alt text](image-8.png)
+
+https://docs.databricks.com/aws/en/ldp/expectations#multiple-expectations-management
+
+</details>
+
+<details>
+<summary>programmatically extract the data quality results of a LDP pipeline </summary>
+In the event log table for LDP* pipelines, the data quality results are logged under events of type 'flow_progress' and stored inside the details column in a nested JSON structure:
+
+details:flow_progress: contains information about a pipeline’s execution progress
+
+details:flow_progress.data_quality: contains the data quality results (expectations, dropped_records, etc.)
+
+details:flow_progress:data_quality.expectations: specifically holds the expectation results
+
+* Databricks has recenlty open-sourced this solution, integrating it into the Apache Spark ecosystem under the name Spark Declarative Pipelines (SDP).
+</details>
+
+<details>
+<summary>DataFrameWriter.mode </summary>
+
+DataFrameWriter.mode defines the writing behaviour when data or table already exists.
+
+Options include:
+
+append: Append contents of the DataFrame to existing data.
+
+overwrite: Overwrite existing data.
+
+error or errorifexists: Throw an exception if data already exists.
+
+ignore: Silently ignore this operation if data already exists.
+
+This errorifexists or error is the default save mode. If the table already exists, it will throw the error message Error: pyspark.sql.utils.AnalysisException: table already exists.
+
+The "employees_performance" table has a date column. So, in order to be able to compare employees' performance across time, each new batch of data with new date should be appended into the table using the append mode.
+
+https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameWriter.mode.html
+
+</details>
+
+<details>
+<summary>Spark UI </summary>
+
+https://spark.apache.org/docs/latest/web-ui.html
+
+</details>
+
+<details>
+<summary> jobs command group </summary>
+
+https://docs.databricks.com/aws/en/dev-tools/cli/reference/jobs-commands
+
+</details>
+
+<details>
+<summary>D2D and D2O </summary>
+Databricks-to-Databricks sharing (D2D) uses built-in authentication with no token exchange, allowing internal teams to access shared data seamlessly within the Databricks environment, whereas open Delta Sharing (D2O) requires external authentication, typically via bearer tokens or OIDC federation, to securely grant external partners access to the data.
+https://docs.databricks.com/aws/en/delta-sharing/create-recipient-oidc-fed
+</details>
+
+<details>
+<summary>liquid clustering for tables </summary>
+To cluster the newly added data in a Delta Lake table with liquid clustering enabled, the data engineer should execute the OPTIMIZE command. OPTIMIZE triggers the clustering operation by physically reorganizing the data files to improve query performance.
+
+https://docs.databricks.com/aws/en/delta/clustering
+
+</details>
+
+<details>
+<summary>Predictive optimization for Unity Catalog managed tables </summary>
+
+https://docs.databricks.com/aws/en/optimizations/predictive-optimization
 
 </details>
 
@@ -595,22 +750,6 @@ https://docs.databricks.com/aws/en/compute/clusters-manage#cluster-level-permiss
 <summary> </summary>
 
 </details>
-
-<details>
-<summary> </summary>
-
-</details>
-
-<details>
-<summary> </summary>
-
-</details>
-
-<details>
-<summary> </summary>
-
-</details>
-
 <details>
 <summary> </summary>
 
