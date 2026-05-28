@@ -1,12 +1,20 @@
 
  
 <details>
-<summary>sys.path </summary>
-The sys.path variable contains a list of directories where the Python interpreter searches for modules.
-To import modules from another directory, you must add it to sys.path
+<summary><strong>sys.path</strong></summary>
 
+The `sys.path` variable contains a list of directories where the Python interpreter searches for modules.
+
+To import modules from another directory, you must add that directory to `sys.path`.
+
+### Example
+
+```python
 import sys
+
 sys.path.append("/path/to/dir")
+```
+
 </details>
 
 <details>
@@ -56,22 +64,39 @@ Databricks Secrets allows you to securely store your credentials and reference t
 </details>
 
 <details>
-<summary>The following job definition includes tasks and job clusters, but the engineer also needs to define which user groups can manage or view the job </summary>
+<summary><strong>The following job definition includes tasks and job clusters, but the engineer also needs to define which user groups can manage or view the job</strong></summary>
+
 ```yml
 resources:
-    jobs:
-        my-job:
-            name: analytics-job
-            tasks: [...]
-            job_clusters: [...]
-            __________:
-                - group_name: devops-team
-                level: CAN_MANAGE
-                - group_name: qa-team
-                level: CAN_VIEW
+  jobs:
+    my-job:
+      name: analytics-job
+      tasks: [...]
+      job_clusters: [...]
+
+      permissions:
+        - group_name: devops-team
+          level: CAN_MANAGE
+
+        - group_name: qa-team
+          level: CAN_VIEW
 ```
-**Ans : permissions**
-The permissions mapping is used to specify the access control lists (ACLs) for the job, defining which users or groups have what level of access (like CAN_MANAGE or CAN_VIEW).
+
+### Answer
+**permissions**
+
+### Explanation
+The `permissions` mapping is used to specify the access control lists (ACLs) for the job.
+
+It defines which users or groups have specific access levels such as:
+
+- `CAN_MANAGE`
+- `CAN_VIEW`
+- `CAN_RUN`
+- `IS_OWNER`
+
+This helps control who can manage, run, or view the Databricks job.
+
 </details>
 
 <details>
