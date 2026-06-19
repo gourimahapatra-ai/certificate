@@ -1,25 +1,29 @@
-# ⚡ Fast Learning - AWS Fundamentals
+# Fast Learning - AWS Fundamentals
 
 > **Time to Complete**: 30-45 minutes | **Exam Weight**: ~10% foundation
 
-## 🎯 Must-Know Concepts (5 Minutes)
+## Must-Know Concepts (5 Minutes)
 
 ### AWS Global Infrastructure - The 3 Pillars
-```
-REGIONS → AVAILABILITY ZONES → EDGE LOCATIONS
-  30+           3-6 per region        400+
-Isolated      Independent DCs      CDN endpoints
-```
+| Component                                             | Count |
+| ----------------------------------------------------- | ----- |
+| AWS Regions                                           | 39    |
+| Availability Zones (AZs)                              | 123   |
+| CloudFront Points of Presence (PoPs) / Edge Locations | 750+  |
+| Regional Edge Caches                                  | 15    |
+| Local Zones                                           | 43    |
+| Wavelength Zones                                      | 33    |
+
 
 **Memory Aid: "RAE" = Regions, AZs, Edge**
 
 ### Key Numbers to Remember
-- **Regions**: 30+ worldwide
+- **Regions**: 39+ worldwide
 - **AZs per Region**: Minimum 3, typically 3-6
-- **Edge Locations**: 400+ (most numerous)
+- **Edge Locations**: 750+ (most numerous)
 - **Local Zones**: Extended regions for ultra-low latency
 
-## 📊 Quick Reference Tables
+## Quick Reference Tables
 
 ### Region Selection Criteria (CPAS)
 | Factor | Question to Ask |
@@ -39,7 +43,7 @@ Isolated      Independent DCs      CDN endpoints
 | **P**erformance Efficiency | Right resources? | Match workload |
 | **S**ustainability | Minimize impact? | Optimize utilization |
 
-## 🔥 Exam Hot Topics
+## Exam Hot Topics
 
 ### 1. Shared Responsibility Model
 ```
@@ -74,7 +78,7 @@ CUSTOMER RESPONSIBILITY (Security IN the cloud)
 | SDK | Application code | Building apps |
 | CloudFormation | Infrastructure as Code | Replicate environments |
 
-## 💡 Common Exam Scenarios
+## Common Exam Scenarios
 
 ### Scenario 1: Minimize Latency
 **Question**: Users in Europe experience high latency
@@ -92,7 +96,7 @@ CUSTOMER RESPONSIBILITY (Security IN the cloud)
 **Question**: Data cannot leave country
 **Answer**: Choose region in that country + verify data residency
 
-## 🎓 Speed Learning Tips
+## Speed Learning Tips
 
 ### 1-Minute Drill
 - Region = Geography (multiple buildings)
@@ -206,7 +210,7 @@ Total: 2,000 GB → Higher pricing tier applies to all
 ❌ Assuming all services in all regions
 ❌ Forgetting shared responsibility boundaries
 
-## 📝 Rapid-Fire Facts
+## Rapid-Fire Facts
 
 **Global vs Regional Services:**
 - **Global**: IAM, CloudFront, Route 53, WAF
@@ -221,7 +225,7 @@ Total: 2,000 GB → Higher pricing tier applies to all
 - **N**etworking: VPC, Route 53
 - **S**ecurity: IAM, KMS, Secrets Manager
 
-## 🚀 5-Minute Master Review
+## 5-Minute Master Review
 
 1. **Infrastructure**: Regions → AZs → Edge Locations (largest to smallest coverage)
 2. **HA Strategy**: Always use multiple AZs in same region
@@ -230,7 +234,7 @@ Total: 2,000 GB → Higher pricing tier applies to all
 5. **Shared Responsibility**: AWS = infrastructure, You = data/config
 6. **Region Selection**: Compliance → Proximity → Availability → Spending (CPAS)
 
-## 🎯 Exam Practice Speedrun
+## Exam Practice Speedrun
 
 **Quick Questions** (Answers at bottom)
 1. How many AZs minimum per region? __
@@ -243,7 +247,7 @@ Total: 2,000 GB → Higher pricing tier applies to all
 
 **Answers**: 1) 3  2) CloudFront/Edge Locations  3) AWS  4) AZs  5) Global
 
-## ⏱️ Next Steps
+## Next Steps
 - Time spent: ~30 min
 - Ready for: Practice questions
 - Move to: Module 02 - IAM
